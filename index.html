@@ -1,1 +1,1121 @@
 
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Robin Van De Reviere | Acteur</title>
+  <meta
+    name="description"
+    content="Portfolio van Robin Van De Reviere - acteur uit Gent."
+  >
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap');
+
+    :root {
+      --black: #11110f;
+      --warm-black: #181713;
+      --cream: #f4f0e6;
+      --muted: #b8b1a3;
+      --yellow: #e7d52d;
+      --teal: #3aa69a;
+      --rust: #d65b3e;
+      --line: rgba(244,240,230,.18);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--black);
+      color: var(--cream);
+      font-family: "DM Sans", sans-serif;
+      overflow-x: hidden;
+    }
+
+    body::selection {
+      background: var(--yellow);
+      color: var(--black);
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* -------------------------
+       NAVIGATION
+    -------------------------- */
+
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      padding: 26px 5vw;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      z-index: 100;
+
+      transition:
+        background .4s ease,
+        padding .4s ease,
+        backdrop-filter .4s ease;
+    }
+
+    nav.scrolled {
+      padding-top: 17px;
+      padding-bottom: 17px;
+
+      background: rgba(17,17,15,.80);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(255,255,255,.07);
+    }
+
+    .logo {
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: .13em;
+    }
+
+    .nav-links a {
+      opacity: .7;
+      transition: opacity .25s ease;
+    }
+
+    .nav-links a:hover {
+      opacity: 1;
+    }
+
+    /* -------------------------
+       HERO
+    -------------------------- */
+
+    .hero {
+      min-height: 100vh;
+
+      display: flex;
+      align-items: flex-end;
+
+      position: relative;
+      overflow: hidden;
+
+      padding: 10vh 5vw 8vh;
+    }
+
+    .hero-image {
+      position: absolute;
+      inset: 0;
+
+      background:
+        linear-gradient(
+          90deg,
+          rgba(0,0,0,.34),
+          rgba(0,0,0,.05)
+        ),
+        url("images/begraven-kind-01.jpg")
+        center 28% / cover no-repeat;
+
+      transform: scale(1.04);
+
+      animation: heroZoom 12s ease-out forwards;
+    }
+
+    @keyframes heroZoom {
+      to {
+        transform: scale(1);
+      }
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+
+      background:
+        linear-gradient(
+          to top,
+          rgba(17,17,15,.98) 0%,
+          rgba(17,17,15,.42) 42%,
+          rgba(17,17,15,.08) 70%
+        );
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+
+      max-width: 1100px;
+    }
+
+    .eyebrow {
+      color: var(--yellow);
+
+      font-size: 12px;
+      font-weight: 600;
+
+      text-transform: uppercase;
+      letter-spacing: .2em;
+
+      margin-bottom: 18px;
+    }
+
+    .hero h1 {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(55px, 9vw, 145px);
+      line-height: .84;
+
+      max-width: 1100px;
+      letter-spacing: -.045em;
+    }
+
+    .hero-bottom {
+      margin-top: 42px;
+
+      display: flex;
+      align-items: center;
+      gap: 32px;
+    }
+
+    .hero-bottom p {
+      max-width: 410px;
+
+      color: rgba(244,240,230,.73);
+
+      font-size: 15px;
+      line-height: 1.7;
+    }
+
+    .scroll-cue {
+      border: 1px solid rgba(255,255,255,.35);
+
+      border-radius: 100px;
+
+      width: 48px;
+      height: 48px;
+
+      display: grid;
+      place-items: center;
+
+      flex-shrink: 0;
+
+      font-size: 19px;
+
+      animation: pulse 2.2s infinite;
+    }
+
+    @keyframes pulse {
+      0%,100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(7px);
+      }
+    }
+
+    /* -------------------------
+       INTRO
+    -------------------------- */
+
+    .intro {
+      min-height: 70vh;
+
+      padding: 120px 8vw;
+
+      display: grid;
+
+      grid-template-columns: .8fr 2fr;
+
+      gap: 8vw;
+
+      align-items: start;
+    }
+
+    .section-label {
+      font-size: 11px;
+      font-weight: 600;
+
+      text-transform: uppercase;
+      letter-spacing: .2em;
+
+      color: var(--muted);
+
+      padding-top: 12px;
+    }
+
+    .intro-copy {
+      max-width: 1000px;
+    }
+
+    .intro-copy h2 {
+      font-family: "Playfair Display", serif;
+
+      font-size: clamp(37px, 5.3vw, 77px);
+
+      line-height: 1.07;
+      letter-spacing: -.025em;
+
+      font-weight: 500;
+    }
+
+    .intro-copy h2 em {
+      color: var(--yellow);
+      font-weight: 500;
+    }
+
+    .intro-copy p {
+      margin-top: 38px;
+
+      max-width: 670px;
+
+      font-size: 17px;
+      color: var(--muted);
+
+      line-height: 1.8;
+    }
+
+    /* -------------------------
+       WORK
+    -------------------------- */
+
+    .work {
+      padding: 30px 5vw 140px;
+    }
+
+    .work-header {
+      border-bottom: 1px solid var(--line);
+
+      padding-bottom: 22px;
+      margin-bottom: 70px;
+
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+    }
+
+    .work-header h2 {
+      font-family: "Playfair Display", serif;
+
+      font-size: clamp(45px, 6vw, 85px);
+
+      font-weight: 500;
+    }
+
+    .work-header span {
+      color: var(--muted);
+
+      font-size: 12px;
+
+      text-transform: uppercase;
+      letter-spacing: .15em;
+
+      padding-bottom: 10px;
+    }
+
+    /* -------------------------
+       PRODUCTION
+    -------------------------- */
+
+    .production {
+      padding-bottom: 140px;
+      margin-bottom: 140px;
+
+      border-bottom: 1px solid var(--line);
+    }
+
+    .production:last-child {
+      border-bottom: 0;
+      margin-bottom: 0;
+    }
+
+    .production-heading {
+      display: grid;
+
+      grid-template-columns: 1fr 2fr;
+
+      gap: 6vw;
+
+      margin-bottom: 55px;
+    }
+
+    .production-year {
+      color: var(--muted);
+
+      font-size: 12px;
+
+      text-transform: uppercase;
+      letter-spacing: .16em;
+
+      padding-top: 12px;
+    }
+
+    .production-title h3 {
+      font-family: "Playfair Display", serif;
+
+      font-size: clamp(42px, 6.5vw, 96px);
+
+      line-height: .96;
+      letter-spacing: -.035em;
+
+      font-weight: 500;
+    }
+
+    .meta {
+      margin-top: 25px;
+
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .pill {
+      border: 1px solid var(--line);
+
+      border-radius: 100px;
+
+      padding: 8px 15px;
+
+      font-size: 11px;
+      letter-spacing: .08em;
+
+      text-transform: uppercase;
+
+      color: var(--muted);
+    }
+
+    .production-description {
+      max-width: 640px;
+
+      margin-top: 30px;
+
+      color: var(--muted);
+
+      line-height: 1.75;
+
+      font-size: 16px;
+    }
+
+    /* -------------------------
+       GALLERIES
+    -------------------------- */
+
+    .gallery-feature {
+      display: grid;
+
+      grid-template-columns: 1.2fr .8fr;
+
+      grid-template-rows: 400px 400px;
+
+      gap: 13px;
+    }
+
+    .gallery-feature .photo:first-child {
+      grid-row: 1 / 3;
+    }
+
+    .photo {
+      overflow: hidden;
+
+      background: #26251f;
+
+      position: relative;
+    }
+
+    .photo img {
+      width: 100%;
+      height: 100%;
+
+      display: block;
+
+      object-fit: cover;
+
+      transition:
+        transform .8s cubic-bezier(.2,.7,.2,1),
+        filter .8s ease;
+    }
+
+    .photo:hover img {
+      transform: scale(1.035);
+    }
+
+    .gallery-3 {
+      display: grid;
+
+      grid-template-columns: 1.1fr .9fr .9fr;
+
+      height: 650px;
+
+      gap: 13px;
+    }
+
+    .gallery-2 {
+      display: grid;
+
+      grid-template-columns: 1.15fr .85fr;
+
+      height: 650px;
+
+      gap: 13px;
+    }
+
+    .production.begraven .production-title h3 {
+      color: #efe8d8;
+    }
+
+    .production.way .production-title h3 {
+      color: #df8d57;
+    }
+
+    .production.stasi .production-title h3 {
+      color: #d2d9ed;
+    }
+
+    /* -------------------------
+       CONTACT
+    -------------------------- */
+
+    .contact {
+      min-height: 68vh;
+
+      background: var(--cream);
+      color: var(--black);
+
+      padding: 110px 6vw 60px;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .contact-small {
+      font-size: 12px;
+      text-transform: uppercase;
+
+      letter-spacing: .17em;
+
+      opacity: .6;
+    }
+
+    .contact h2 {
+      font-family: "Playfair Display", serif;
+
+      font-size: clamp(50px, 8.5vw, 130px);
+
+      line-height: .9;
+      letter-spacing: -.045em;
+
+      margin: 45px 0 60px;
+
+      max-width: 1000px;
+    }
+
+    .contact-link {
+      display: inline-block;
+
+      font-size: clamp(19px, 2vw, 31px);
+
+      border-bottom: 2px solid var(--black);
+
+      padding-bottom: 5px;
+
+      transition: opacity .2s ease;
+    }
+
+    .contact-link:hover {
+      opacity: .55;
+    }
+
+    footer {
+      margin-top: 95px;
+
+      padding-top: 20px;
+
+      border-top: 1px solid rgba(0,0,0,.20);
+
+      display: flex;
+      justify-content: space-between;
+
+      gap: 20px;
+
+      font-size: 11px;
+
+      text-transform: uppercase;
+
+      letter-spacing: .12em;
+
+      opacity: .6;
+    }
+
+    /* -------------------------
+       SCROLL ANIMATIONS
+    -------------------------- */
+
+    .reveal {
+      opacity: 0;
+
+      transform: translateY(35px);
+
+      transition:
+        opacity .9s ease,
+        transform .9s cubic-bezier(.2,.7,.2,1);
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* -------------------------
+       MOBILE
+    -------------------------- */
+
+    @media (max-width: 800px) {
+
+      nav {
+        padding: 20px;
+      }
+
+      .nav-links {
+        gap: 14px;
+      }
+
+      .nav-links a:first-child {
+        display: none;
+      }
+
+      .hero {
+        min-height: 92vh;
+        padding: 100px 22px 45px;
+      }
+
+      .hero-image {
+        background-position: 48% center;
+      }
+
+      .hero h1 {
+        font-size: clamp(53px, 17vw, 85px);
+        line-height: .91;
+      }
+
+      .hero-bottom {
+        align-items: flex-start;
+      }
+
+      .intro {
+        display: block;
+
+        padding: 90px 22px;
+      }
+
+      .section-label {
+        margin-bottom: 35px;
+      }
+
+      .intro-copy p {
+        font-size: 15px;
+      }
+
+      .work {
+        padding:
+          20px
+          14px
+          90px;
+      }
+
+      .work-header {
+        margin-bottom: 50px;
+      }
+
+      .production {
+        margin-bottom: 85px;
+        padding-bottom: 85px;
+      }
+
+      .production-heading {
+        display: block;
+
+        padding: 0 8px;
+
+        margin-bottom: 35px;
+      }
+
+      .production-year {
+        margin-bottom: 15px;
+      }
+
+      .production-title h3 {
+        font-size: 50px;
+      }
+
+      .gallery-feature,
+      .gallery-3,
+      .gallery-2 {
+        display: grid;
+
+        grid-template-columns: 1fr 1fr;
+
+        grid-template-rows: auto;
+
+        height: auto;
+
+        gap: 7px;
+      }
+
+      .gallery-feature .photo:first-child {
+        grid-row: auto;
+
+        grid-column: 1 / 3;
+
+        height: 520px;
+      }
+
+      .gallery-feature .photo:not(:first-child) {
+        height: 280px;
+      }
+
+      .gallery-3 .photo,
+      .gallery-2 .photo {
+        height: 330px;
+      }
+
+      .gallery-3 .photo:first-child {
+        grid-column: 1 / 3;
+        height: 480px;
+      }
+
+      .contact {
+        padding: 90px 23px 35px;
+      }
+
+      footer {
+        flex-direction: column;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+
+<nav id="nav">
+  <a class="logo" href="#top">
+    Robin Van De Reviere
+  </a>
+
+  <div class="nav-links">
+    <a href="#about">Over</a>
+    <a href="#work">Producties</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+
+<!-- HERO -->
+
+<header class="hero" id="top">
+
+  <div class="hero-image"></div>
+
+  <div class="hero-content">
+
+    <div class="eyebrow">
+      Acteur · Gent
+    </div>
+
+    <h1>
+      Robin<br>
+      Van De Reviere
+    </h1>
+
+    <div class="hero-bottom">
+
+      <p>
+        Theateracteur met ervaring in zaal- en locatietheater.
+        Een selectie uit recent werk.
+      </p>
+
+      <a
+        href="#about"
+        class="scroll-cue"
+        aria-label="Scroll naar beneden"
+      >
+        ↓
+      </a>
+
+    </div>
+
+  </div>
+
+</header>
+
+
+<!-- ABOUT -->
+
+<section class="intro" id="about">
+
+  <div class="section-label reveal">
+    01 / Profiel
+  </div>
+
+  <div class="intro-copy reveal">
+
+    <h2>
+      Op zoek naar <em>spel</em> dat leeft,
+      beweegt en contact maakt.
+    </h2>
+
+    <p>
+      Robin Van De Reviere is acteur uit Gent met ervaring
+      in zowel zaaltheater als grootschalig locatietheater.
+      Van intieme scènes in ARCA tot een speelreeks voor
+      honderden toeschouwers per avond in Aalst.
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- WORK -->
+
+<main class="work" id="work">
+
+  <div class="work-header reveal">
+
+    <h2>Producties</h2>
+
+    <span>
+      Selected work · 2025–2026
+    </span>
+
+  </div>
+
+
+  <!-- BEGRAVEN KIND -->
+
+  <article class="production begraven">
+
+    <div class="production-heading reveal">
+
+      <div class="production-year">
+        2026 · Aalst
+      </div>
+
+      <div class="production-title">
+
+        <h3>Begraven Kind</h3>
+
+        <div class="meta">
+
+          <span class="pill">
+            Compagnie Gardavoe
+          </span>
+
+          <span class="pill">
+            Locatietheater
+          </span>
+
+          <span class="pill">
+            10 voorstellingen
+          </span>
+
+          <span class="pill">
+            Aalst
+          </span>
+
+        </div>
+
+        <p class="production-description">
+          Een grootschalige locatietheaterproductie in Aalst.
+          Begraven Kind speelde in september 2026 een reeks van
+          tien voorstellingen. Een productie waarin tekstspel,
+          ensemblewerk en de fysieke speelomgeving samenkomen
+          in een uitzonderlijke theatrale setting.
+        </p>
+
+      </div>
+
+    </div>
+
+
+    <div class="gallery-feature reveal">
+
+      <figure class="photo">
+        <img
+          src="images/begraven-kind-01.jpg"
+          alt="Begraven Kind - scènebeeld"
+          loading="lazy"
+        >
+      </figure>
+
+      <figure class="photo">
+        <img
+          src="images/begraven-kind-02.jpg"
+          alt="Begraven Kind - scènebeeld"
+          loading="lazy"
+        >
+      </figure>
+
+      <figure class="photo">
+        <img
+          src="images/begraven-kind-03.jpg"
+          alt="Begraven Kind - scènebeeld"
+          loading="lazy"
+        >
+      </figure>
+
+    </div>
+
+  </article>
+
+
+  <!-- THE WAY YOU LOOK TONIGHT -->
+
+  <article class="production way">
+
+    <div class="production-heading reveal">
+
+      <div class="production-year">
+        2026 · Gent
+      </div>
+
+      <div class="production-title">
+
+        <h3>
+          The Way You<br>
+          Look Tonight
+        </h3>
+
+        <div class="meta">
+
+          <span class="pill">
+            ARCA Theater
+          </span>
+
+          <span class="pill">
+            Gent
+          </span>
+
+        </div>
+
+        <p class="production-description">
+          Theaterproductie gespeeld in ARCA Theater in Gent,
+          met een intiemere speelstijl en directe nabijheid
+          tussen spelers en publiek.
+        </p>
+
+      </div>
+
+    </div>
+
+
+    <div class="gallery-3 reveal">
+
+      <figure class="photo">
+        <img
+          src="images/way-01.jpg"
+          alt="The Way You Look Tonight - scènebeeld"
+          loading="lazy"
+        >
+      </figure>
+
+      <figure class="photo">
+        <img
+          src="images/way-02.jpg"
+          alt="The Way You Look Tonight - scènebeeld"
+          loading="lazy"
+        >
+      </figure>
+
+      <figure class="photo">
+        <img
+          src="images/way-03.jpg"
+          alt="The Way You Look Tonight - scènebeeld"
+          loading="lazy"
+        >
+      </figure>
+
+    </div>
+
+  </article>
+
+
+  <!-- STASIMAN -->
+
+  <article class="production stasi">
+
+    <div class="production-heading reveal">
+
+      <div class="production-year">
+        2025 · Gent
+      </div>
+
+      <div class="production-title">
+
+        <h3>Stasiman</h3>
+
+        <div class="meta">
+
+          <span class="pill">
+            ARCA Theater
+          </span>
+
+          <span class="pill">
+            Gent
+          </span>
+
+        </div>
+
+        <p class="production-description">
+          Theaterproductie gespeeld in ARCA Theater in Gent.
+        </p>
+
+      </div>
+
+    </div>
+
+
+    <div class="gallery-2 reveal">
+
+      <figure class="photo">
+        <img
+          src="images/stasiman-01.jpg"
+          alt="Stasiman - scènebeeld"
+          loading="lazy"
+        >
+      </figure>
+
+      <figure class="photo">
+        <img
+          src="images/stasiman-02.jpg"
+          alt="Stasiman - scènebeeld"
+          loading="lazy"
+        >
+      </figure>
+
+    </div>
+
+  </article>
+
+</main>
+
+
+<!-- CONTACT -->
+
+<section class="contact" id="contact">
+
+  <div>
+
+    <div class="contact-small">
+      Contact
+    </div>
+
+    <h2>
+      Samen iets<br>
+      maken?
+    </h2>
+
+    <a
+      class="contact-link"
+      href="mailto:vandereviererobin@gmail.com"
+    >
+      vandereviererobin@gmail.com ↗
+    </a>
+
+  </div>
+
+
+  <footer>
+
+    <span>
+      Robin Van De Reviere · Acteur
+    </span>
+
+    <span>
+      Gent · België
+    </span>
+
+    <span>
+      © 2026
+    </span>
+
+  </footer>
+
+</section>
+
+
+<script>
+
+  /* NAVIGATION */
+
+  const nav = document.getElementById("nav");
+
+  window.addEventListener("scroll", () => {
+
+    if (window.scrollY > 80) {
+      nav.classList.add("scrolled");
+    } else {
+      nav.classList.remove("scrolled");
+    }
+
+  });
+
+
+  /* SCROLL REVEAL */
+
+  const revealElements =
+    document.querySelectorAll(".reveal");
+
+  const observer =
+    new IntersectionObserver(
+      entries => {
+
+        entries.forEach(entry => {
+
+          if (entry.isIntersecting) {
+
+            entry.target.classList.add("visible");
+
+            observer.unobserve(entry.target);
+
+          }
+
+        });
+
+      },
+      {
+        threshold: 0.12
+      }
+    );
+
+  revealElements.forEach(element => {
+    observer.observe(element);
+  });
+
+</script>
+
+</body>
+</html>

@@ -16,15 +16,7 @@
     >
 
     <style>
-
-        @import url(
-            'https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap'
-        );
-
-
-        /* =========================
-           VARIABLES
-        ========================= */
+        @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap');
 
         :root {
             --black: #11110f;
@@ -41,14 +33,7 @@
             --stasi-blue: #111b2e;
             --stasi-accent: #8fa6d6;
             --stasi-light: #e2e7ef;
-
-            --line: rgba(255, 255, 255, .16);
         }
-
-
-        /* =========================
-           RESET
-        ========================= */
 
         * {
             box-sizing: border-box;
@@ -63,9 +48,7 @@
         body {
             background: var(--black);
             color: var(--cream);
-
             font-family: "DM Sans", sans-serif;
-
             overflow-x: hidden;
         }
 
@@ -84,9 +67,8 @@
             color: #111;
         }
 
-
         /* =========================
-           NAVIGATION
+           NAVIGATIE
         ========================= */
 
         nav {
@@ -94,7 +76,6 @@
             top: 0;
             left: 0;
             right: 0;
-
             z-index: 100;
 
             display: flex;
@@ -116,14 +97,12 @@
             background: rgba(10, 10, 9, .84);
             backdrop-filter: blur(15px);
 
-            border-bottom:
-                1px solid rgba(255, 255, 255, .07);
+            border-bottom: 1px solid rgba(255, 255, 255, .07);
         }
 
         .logo {
             font-size: 12px;
             font-weight: 600;
-
             letter-spacing: .18em;
             text-transform: uppercase;
         }
@@ -133,14 +112,12 @@
             gap: 28px;
 
             font-size: 11px;
-
             letter-spacing: .14em;
             text-transform: uppercase;
         }
 
         .nav-links a {
             opacity: .65;
-
             transition: opacity .25s ease;
         }
 
@@ -148,14 +125,12 @@
             opacity: 1;
         }
 
-
         /* =========================
            HERO
         ========================= */
 
         .hero {
             min-height: 100vh;
-
             position: relative;
 
             display: flex;
@@ -163,10 +138,7 @@
 
             overflow: hidden;
 
-            padding:
-                0
-                5vw
-                8vh;
+            padding: 0 5vw 8vh;
         }
 
         .hero-image {
@@ -184,12 +156,7 @@
                 center 32% / cover no-repeat;
 
             transform: scale(1.05);
-
-            animation:
-                heroZoom
-                12s
-                ease
-                forwards;
+            animation: heroZoom 12s ease forwards;
         }
 
         @keyframes heroZoom {
@@ -201,7 +168,6 @@
         .hero-content {
             position: relative;
             z-index: 2;
-
             max-width: 1100px;
         }
 
@@ -210,7 +176,6 @@
 
             font-size: 11px;
             font-weight: 600;
-
             text-transform: uppercase;
             letter-spacing: .22em;
 
@@ -218,17 +183,8 @@
         }
 
         .hero h1 {
-            font-family:
-                "Playfair Display",
-                serif;
-
-            font-size:
-                clamp(
-                    57px,
-                    9vw,
-                    145px
-                );
-
+            font-family: "Playfair Display", serif;
+            font-size: clamp(57px, 9vw, 145px);
             line-height: .84;
             letter-spacing: -.045em;
         }
@@ -242,18 +198,9 @@
         }
 
         .hero-intro p {
-            color:
-                rgba(
-                    255,
-                    255,
-                    255,
-                    .72
-                );
-
+            color: rgba(255, 255, 255, .72);
             max-width: 420px;
-
             line-height: 1.7;
-
             font-size: 14px;
         }
 
@@ -261,24 +208,13 @@
             width: 48px;
             height: 48px;
 
-            border:
-                1px solid
-                rgba(
-                    255,
-                    255,
-                    255,
-                    .35
-                );
-
+            border: 1px solid rgba(255, 255, 255, .35);
             border-radius: 100%;
 
             display: grid;
             place-items: center;
 
-            animation:
-                bounce
-                2.3s
-                infinite;
+            animation: bounce 2.3s infinite;
         }
 
         @keyframes bounce {
@@ -292,35 +228,24 @@
             }
         }
 
-
         /* =========================
-           PROFILE
+           PROFIEL
         ========================= */
 
         .profile {
             min-height: 70vh;
-
-            padding:
-                120px
-                8vw;
+            padding: 120px 8vw;
 
             display: grid;
-
-            grid-template-columns:
-                .7fr
-                2fr;
-
+            grid-template-columns: .7fr 2fr;
             gap: 7vw;
         }
 
         .label {
             font-size: 11px;
-
             text-transform: uppercase;
             letter-spacing: .2em;
-
             opacity: .55;
-
             padding-top: 12px;
         }
 
@@ -329,63 +254,40 @@
         }
 
         .profile-copy h2 {
-            font-family:
-                "Playfair Display",
-                serif;
-
-            font-size:
-                clamp(
-                    38px,
-                    5.5vw,
-                    78px
-                );
-
+            font-family: "Playfair Display", serif;
+            font-size: clamp(38px, 5.5vw, 78px);
             font-weight: 500;
-
             line-height: 1.06;
             letter-spacing: -.025em;
         }
 
         .profile-copy em {
             color: var(--buried-yellow);
-
             font-weight: 500;
         }
 
         .profile-copy p {
             margin-top: 35px;
-
             max-width: 670px;
 
             color: #aaa396;
-
             font-size: 16px;
-
             line-height: 1.8;
         }
 
-
         /* =========================
-           GENERIC PRODUCTION
+           ALGEMENE PRODUCTIESTIJL
         ========================= */
 
         .production {
             position: relative;
-
-            padding:
-                125px
-                5vw;
+            padding: 125px 5vw;
         }
 
         .production-header {
             display: grid;
-
-            grid-template-columns:
-                .65fr
-                2fr;
-
+            grid-template-columns: .65fr 2fr;
             gap: 6vw;
-
             margin-bottom: 60px;
         }
 
@@ -393,83 +295,53 @@
             padding-top: 14px;
 
             font-size: 11px;
-
             text-transform: uppercase;
             letter-spacing: .18em;
-
             opacity: .58;
         }
 
         .production h2 {
-            font-family:
-                "Playfair Display",
-                serif;
-
-            font-size:
-                clamp(
-                    50px,
-                    7vw,
-                    105px
-                );
-
+            font-family: "Playfair Display", serif;
+            font-size: clamp(50px, 7vw, 105px);
             line-height: .92;
             letter-spacing: -.04em;
-
             font-weight: 500;
         }
 
         .tags {
             display: flex;
             flex-wrap: wrap;
-
             gap: 9px;
-
             margin-top: 25px;
         }
 
         .tag {
-            padding:
-                8px
-                14px;
-
+            padding: 8px 14px;
             border-radius: 100px;
-
-            border:
-                1px solid
-                currentColor;
+            border: 1px solid currentColor;
 
             font-size: 10px;
-
             text-transform: uppercase;
             letter-spacing: .09em;
-
             opacity: .66;
         }
 
         .description {
             max-width: 660px;
-
             margin-top: 28px;
 
             line-height: 1.8;
-
             font-size: 15px;
-
             opacity: .7;
         }
-
 
         /* =========================
            BEGRAVEN KIND
         ========================= */
 
         .begraven {
-            background:
-                var(--buried-white);
-
-            color:
-                var(--buried-black);
-
+            background: var(--buried-white);
+            color: var(--buried-black);
             padding-top: 145px;
         }
 
@@ -493,27 +365,17 @@
         .yellow-rule {
             width: 80px;
             height: 8px;
-
-            background:
-                var(--buried-yellow);
-
+            background: var(--buried-yellow);
             margin-bottom: 35px;
         }
 
-
-        /* Begraven Kind: affiche en breed beeld */
+        /* Affiche en breed decorbeeld */
 
         .begraven-lead {
             display: grid;
-
-            grid-template-columns:
-                minmax(260px, .72fr)
-                1.55fr;
-
+            grid-template-columns: minmax(260px, .72fr) 1.55fr;
             gap: 14px;
-
             align-items: center;
-
             margin-top: 25px;
         }
 
@@ -525,194 +387,175 @@
 
         .poster {
             aspect-ratio: 4 / 5;
-
             background: #fff;
         }
 
         .poster img {
             width: 100%;
             height: 100%;
-
             object-fit: cover;
             object-position: center;
         }
 
         .begraven-wide {
             aspect-ratio: 3 / 2;
-
             background: #ddd6ca;
         }
 
         .begraven-wide img {
             width: 100%;
             height: 100%;
-
             object-fit: cover;
             object-position: center;
 
             transition:
-                transform
-                .9s
-                cubic-bezier(
-                    .2,
-                    .7,
-                    .2,
-                    1
-                );
+                transform .9s cubic-bezier(.2, .7, .2, 1);
         }
 
         .begraven-wide:hover img {
             transform: scale(1.02);
         }
 
+        /* Grote collage:
+           01 links
+           02/03 rechts boven
+           05 rechts onder
+        */
 
-        /* Begraven Kind: portret en vierkante foto's */
-
-        .begraven-gallery {
+        .begraven-collage {
             display: grid;
 
-            grid-template-columns:
-                1.1fr
-                .75fr
-                .75fr;
+            grid-template-columns: .92fr 1.45fr;
+            grid-template-rows: auto auto;
 
             gap: 14px;
-
             margin-top: 14px;
 
-            align-items: center;
+            align-items: stretch;
         }
 
-        .begraven-gallery figure {
+        .begraven-collage figure {
             position: relative;
             overflow: hidden;
-
             background: #ded8cc;
         }
 
-        .begraven-gallery .portrait {
-            aspect-ratio:
-                1365 / 2048;
+        /* 01 is het grote verticale beeld */
+
+        .begraven-portrait {
+            grid-column: 1;
+            grid-row: 1 / 3;
+
+            aspect-ratio: 1365 / 2048;
         }
 
-        .begraven-gallery .square {
+        .begraven-portrait img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+
+            /* Houdt het hoofd en de bovenkant volledig zichtbaar */
+            object-position: center top;
+        }
+
+        /* 02 en 03 staan als vierkanten naast elkaar */
+
+        .begraven-squares {
+            grid-column: 2;
+            grid-row: 1;
+
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px;
+        }
+
+        .begraven-square {
             aspect-ratio: 1 / 1;
         }
 
-        .begraven-gallery img {
+        .begraven-square img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        /* 05 is bijna vierkant en staat onder 02/03 */
+
+        .begraven-fifth {
+            grid-column: 2;
+            grid-row: 2;
+
+            aspect-ratio: 1000 / 977;
+        }
+
+        .begraven-fifth img {
             width: 100%;
             height: 100%;
 
             object-fit: cover;
 
+            /*
+            De foto is al bijgesneden.
+            Deze positie houdt de personen en de koffer centraal.
+            */
+            object-position: center 58%;
+        }
+
+        .begraven-collage img {
             transition:
-                transform
-                .8s
-                cubic-bezier(
-                    .2,
-                    .7,
-                    .2,
-                    1
-                );
+                transform .8s cubic-bezier(.2, .7, .2, 1);
         }
 
-        /* Volledige bovenkant en hoofd zichtbaar */
-
-        .begraven-gallery .portrait img {
-            object-position:
-                center
-                top;
-        }
-
-        .begraven-gallery .square img {
-            object-position:
-                center
-                center;
-        }
-
-        .begraven-gallery figure:hover img {
+        .begraven-collage figure:hover img {
             transform: scale(1.025);
         }
 
-
-        /* Begraven Kind: statistiek */
+        /* Statistiek */
 
         .begraven-stat {
             margin-top: 85px;
 
-            border-top:
-                1px solid
-                rgba(
-                    0,
-                    0,
-                    0,
-                    .18
-                );
-
+            border-top: 1px solid rgba(0, 0, 0, .18);
             padding-top: 40px;
 
             display: grid;
-
-            grid-template-columns:
-                1fr
-                1fr;
-
+            grid-template-columns: 1fr 1fr;
             gap: 40px;
         }
 
         .big-stat {
-            font-family:
-                "Playfair Display",
-                serif;
-
-            font-size:
-                clamp(
-                    70px,
-                    10vw,
-                    150px
-                );
-
-            color:
-                var(--buried-yellow);
-
+            font-family: "Playfair Display", serif;
+            font-size: clamp(70px, 10vw, 150px);
+            color: var(--buried-yellow);
             line-height: .8;
         }
 
         .stat-copy {
             max-width: 460px;
-
             align-self: end;
 
             font-size: 15px;
-
             line-height: 1.8;
-
             color: #565145;
         }
-
 
         /* =========================
            THE WAY YOU LOOK TONIGHT
         ========================= */
 
         .way {
-            background:
-                var(--way-green);
-
-            color:
-                var(--way-light);
-
+            background: var(--way-green);
+            color: var(--way-light);
             padding-top: 145px;
         }
 
         .way h2 {
-            color:
-                var(--way-amber);
+            color: var(--way-amber);
         }
 
         .way .tag {
-            color:
-                var(--way-amber);
+            color: var(--way-amber);
         }
 
         .way .description {
@@ -721,34 +564,24 @@
 
         .way-gallery {
             display: grid;
-
-            grid-template-columns:
-                1fr
-                1fr
-                1fr;
-
+            grid-template-columns: 1fr 1fr 1fr;
             gap: 13px;
-
             height: 760px;
         }
 
         .way-photo {
             overflow: hidden;
-
             position: relative;
-
             background: #041f1c;
         }
 
         .way-photo:nth-child(2) {
-            transform:
-                translateY(55px);
+            transform: translateY(55px);
         }
 
         .way-photo img {
             width: 100%;
             height: 100%;
-
             object-fit: cover;
 
             transition:
@@ -760,30 +593,24 @@
             transform: scale(1.03);
         }
 
-
         /* =========================
            STASIMAN
         ========================= */
 
         .stasiman {
-            background:
-                var(--stasi-blue);
-
-            color:
-                var(--stasi-light);
+            background: var(--stasi-blue);
+            color: var(--stasi-light);
 
             padding-top: 150px;
             padding-bottom: 160px;
         }
 
         .stasiman h2 {
-            color:
-                var(--stasi-accent);
+            color: var(--stasi-accent);
         }
 
         .stasiman .tag {
-            color:
-                var(--stasi-accent);
+            color: var(--stasi-accent);
         }
 
         .stasiman .description {
@@ -792,21 +619,14 @@
 
         .stasiman-gallery {
             display: grid;
-
-            grid-template-columns:
-                1fr
-                1fr;
-
+            grid-template-columns: 1fr 1fr;
             gap: 14px;
         }
 
         .stasiman-photo {
-            aspect-ratio:
-                1440 / 966;
-
+            aspect-ratio: 1440 / 966;
             position: relative;
             overflow: hidden;
-
             background: #080c15;
         }
 
@@ -818,20 +638,12 @@
             object-position: center;
 
             transition:
-                transform
-                1s
-                cubic-bezier(
-                    .2,
-                    .7,
-                    .2,
-                    1
-                );
+                transform 1s cubic-bezier(.2, .7, .2, 1);
         }
 
         .stasiman-photo:hover img {
             transform: scale(1.025);
         }
-
 
         /* =========================
            CONTACT
@@ -840,15 +652,10 @@
         .contact {
             min-height: 70vh;
 
-            background:
-                var(--buried-yellow);
-
+            background: var(--buried-yellow);
             color: #111;
 
-            padding:
-                105px
-                6vw
-                55px;
+            padding: 105px 6vw 55px;
 
             display: flex;
             flex-direction: column;
@@ -857,55 +664,29 @@
 
         .contact-label {
             font-size: 11px;
-
             text-transform: uppercase;
             letter-spacing: .2em;
-
             opacity: .6;
         }
 
         .contact h2 {
-            font-family:
-                "Playfair Display",
-                serif;
-
-            font-size:
-                clamp(
-                    58px,
-                    9vw,
-                    135px
-                );
-
+            font-family: "Playfair Display", serif;
+            font-size: clamp(58px, 9vw, 135px);
             line-height: .87;
             letter-spacing: -.045em;
-
             font-weight: 500;
 
-            margin:
-                45px
-                0
-                65px;
+            margin: 45px 0 65px;
         }
 
         .email {
             display: inline-block;
+            font-size: clamp(18px, 2vw, 29px);
 
-            font-size:
-                clamp(
-                    18px,
-                    2vw,
-                    29px
-                );
-
-            border-bottom:
-                2px solid
-                #111;
-
+            border-bottom: 2px solid #111;
             padding-bottom: 4px;
 
-            transition:
-                opacity
-                .25s ease;
+            transition: opacity .25s ease;
         }
 
         .email:hover {
@@ -914,100 +695,56 @@
 
         footer {
             margin-top: 90px;
-
             padding-top: 20px;
 
-            border-top:
-                1px solid
-                rgba(
-                    0,
-                    0,
-                    0,
-                    .25
-                );
+            border-top: 1px solid rgba(0, 0, 0, .25);
 
             display: flex;
             justify-content: space-between;
-
             gap: 20px;
 
             font-size: 10px;
-
             text-transform: uppercase;
             letter-spacing: .13em;
         }
 
-
         /* =========================
-           SCROLL ANIMATION
+           SCROLLANIMATIES
         ========================= */
 
         .reveal {
             opacity: 0;
-
-            transform:
-                translateY(35px);
+            transform: translateY(35px);
 
             transition:
                 opacity .9s ease,
-                transform
-                .9s
-                cubic-bezier(
-                    .2,
-                    .7,
-                    .2,
-                    1
-                );
+                transform .9s cubic-bezier(.2, .7, .2, 1);
         }
 
         .reveal.visible {
             opacity: 1;
-
-            transform:
-                translateY(0);
+            transform: translateY(0);
         }
-
 
         /* =========================
            TABLET
         ========================= */
 
-        @media (
-            max-width: 1050px
-        ) {
-
-            .begraven-gallery {
-                grid-template-columns:
-                    1fr
-                    1fr;
-
-                align-items: stretch;
-            }
-
-            .begraven-gallery .portrait {
-                grid-row:
-                    1 / 3;
-            }
-
-            .begraven-gallery .square {
-                align-self: auto;
+        @media (max-width: 1050px) {
+            .begraven-collage {
+                grid-template-columns: .85fr 1.4fr;
             }
 
             .way-gallery {
                 height: 650px;
             }
-
         }
 
-
         /* =========================
-           MOBILE
+           MOBIEL
         ========================= */
 
-        @media (
-            max-width: 800px
-        ) {
-
+        @media (max-width: 800px) {
             nav {
                 padding: 19px;
             }
@@ -1020,32 +757,17 @@
                 display: none;
             }
 
-
-            /* HERO */
-
             .hero {
                 min-height: 92vh;
-
-                padding:
-                    100px
-                    20px
-                    45px;
+                padding: 100px 20px 45px;
             }
 
             .hero-image {
-                background-position:
-                    55%
-                    center;
+                background-position: 55% center;
             }
 
             .hero h1 {
-                font-size:
-                    clamp(
-                        55px,
-                        17vw,
-                        86px
-                    );
-
+                font-size: clamp(55px, 17vw, 86px);
                 line-height: .9;
             }
 
@@ -1053,36 +775,22 @@
                 align-items: flex-start;
             }
 
-
-            /* PROFILE */
-
             .profile {
                 display: block;
-
-                padding:
-                    90px
-                    22px;
+                padding: 90px 22px;
             }
 
             .label {
                 margin-bottom: 32px;
             }
 
-
-            /* GENERAL PRODUCTION */
-
             .production {
-                padding:
-                    90px
-                    14px;
+                padding: 90px 14px;
             }
 
             .production-header {
                 display: block;
-
-                padding:
-                    0
-                    8px;
+                padding: 0 8px;
             }
 
             .production-year {
@@ -1093,67 +801,61 @@
                 font-size: 54px;
             }
 
-
-            /* BEGRAVEN KIND */
+            /* Begraven Kind mobiel */
 
             .begraven-lead {
                 grid-template-columns: 1fr;
-
                 gap: 8px;
             }
 
             .poster {
                 width: 76%;
-
-                margin:
-                    0
-                    auto;
+                margin: 0 auto;
             }
 
             .begraven-wide {
                 width: 100%;
             }
 
-            .begraven-gallery {
-                grid-template-columns:
-                    1fr
-                    1fr;
+            .begraven-collage {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                grid-template-rows: auto;
+                gap: 8px;
+            }
+
+            .begraven-portrait {
+                grid-column: 1 / 3;
+                grid-row: auto;
+
+                width: 76%;
+                margin: 0 auto;
+            }
+
+            .begraven-squares {
+                grid-column: 1 / 3;
+                grid-row: auto;
 
                 gap: 8px;
             }
 
-            .begraven-gallery .portrait {
-                grid-column:
-                    1 / 3;
-
+            .begraven-fifth {
+                grid-column: 1 / 3;
                 grid-row: auto;
 
-                width: 76%;
-
-                margin:
-                    0
-                    auto;
-            }
-
-            .begraven-gallery .square {
                 width: 100%;
             }
 
             .begraven-stat {
-                grid-template-columns:
-                    1fr;
+                grid-template-columns: 1fr;
             }
 
-
-            /* THE WAY YOU LOOK TONIGHT */
+            /* The Way You Look Tonight mobiel */
 
             .way-gallery {
                 height: auto;
 
-                grid-template-columns:
-                    1fr
-                    1fr;
-
+                grid-template-columns: 1fr 1fr;
                 gap: 7px;
             }
 
@@ -1162,9 +864,7 @@
             }
 
             .way-photo:first-child {
-                grid-column:
-                    1 / 3;
-
+                grid-column: 1 / 3;
                 height: 590px;
             }
 
@@ -1172,12 +872,10 @@
                 transform: none;
             }
 
-
-            /* STASIMAN */
+            /* Stasiman mobiel */
 
             .stasiman-gallery {
                 grid-template-columns: 1fr;
-
                 gap: 8px;
             }
 
@@ -1185,33 +883,23 @@
                 width: 100%;
             }
 
-
-            /* CONTACT */
+            /* Contact mobiel */
 
             .contact {
-                padding:
-                    90px
-                    22px
-                    35px;
+                padding: 90px 22px 35px;
             }
 
             footer {
                 flex-direction: column;
-
                 gap: 8px;
             }
-
         }
 
-
         /* =========================
-           SMALL MOBILE
+           KLEINE GSM
         ========================= */
 
-        @media (
-            max-width: 520px
-        ) {
-
+        @media (max-width: 520px) {
             .logo {
                 font-size: 10px;
             }
@@ -1228,7 +916,7 @@
                 width: 90%;
             }
 
-            .begraven-gallery .portrait {
+            .begraven-portrait {
                 width: 90%;
             }
 
@@ -1243,61 +931,32 @@
             .email {
                 overflow-wrap: anywhere;
             }
-
         }
-
     </style>
 </head>
 
-
 <body>
 
-
-    <!-- =========================
-         NAVIGATION
-    ========================== -->
+    <!-- NAVIGATIE -->
 
     <nav id="nav">
-
-        <a
-            class="logo"
-            href="#top"
-        >
+        <a class="logo" href="#top">
             Robin Van De Reviere
         </a>
 
         <div class="nav-links">
-
-            <a href="#about">
-                Over
-            </a>
-
-            <a href="#work">
-                Producties
-            </a>
-
-            <a href="#contact">
-                Contact
-            </a>
-
+            <a href="#about">Over</a>
+            <a href="#work">Producties</a>
+            <a href="#contact">Contact</a>
         </div>
-
     </nav>
 
+    <!-- HERO -->
 
-    <!-- =========================
-         HERO
-    ========================== -->
-
-    <header
-        class="hero"
-        id="top"
-    >
-
+    <header class="hero" id="top">
         <div class="hero-image"></div>
 
         <div class="hero-content">
-
             <div class="eyebrow">
                 Acteur · Gent
             </div>
@@ -1308,11 +967,10 @@
             </h1>
 
             <div class="hero-intro">
-
                 <p>
-                    Theateracteur met ervaring
-                    in zaaltheater en
-                    grootschalig locatietheater.
+                    Theateracteur met ervaring in
+                    zaaltheater en grootschalig
+                    locatietheater.
                 </p>
 
                 <a
@@ -1322,72 +980,47 @@
                 >
                     ↓
                 </a>
-
             </div>
-
         </div>
-
     </header>
 
+    <!-- PROFIEL -->
 
-    <!-- =========================
-         PROFILE
-    ========================== -->
-
-    <section
-        class="profile"
-        id="about"
-    >
-
+    <section class="profile" id="about">
         <div class="label reveal">
             01 / Profiel
         </div>
 
         <div class="profile-copy reveal">
-
             <h2>
-                Spelen vanuit
-                <em>contact</em>,
+                Spelen vanuit <em>contact</em>,
                 verbeelding en beweging.
             </h2>
 
             <p>
-                Robin Van De Reviere is acteur
-                uit Gent met ervaring in zowel
-                intiem zaaltheater als
-                grootschalig locatietheater.
-                Recent werk omvat producties
-                in ARCA Theater Gent en de
-                locatietheaterproductie
-                Begraven Kind in Aalst.
+                Robin Van De Reviere is acteur uit Gent
+                met ervaring in zowel intiem zaaltheater
+                als grootschalig locatietheater. Recent
+                werk omvat producties in ARCA Theater Gent
+                en de locatietheaterproductie Begraven Kind
+                in Aalst.
             </p>
-
         </div>
-
     </section>
 
-
-    <!-- =========================
-         SELECTED WORK
-    ========================== -->
+    <!-- PRODUCTIES -->
 
     <main id="work">
 
-
-        <!-- =====================
-             BEGRAVEN KIND
-        ====================== -->
+        <!-- BEGRAVEN KIND -->
 
         <section class="production begraven">
-
             <div class="production-header reveal">
-
                 <div class="production-year">
                     2026 · Aalst
                 </div>
 
                 <div>
-
                     <div class="yellow-rule"></div>
 
                     <h2>
@@ -1395,7 +1028,6 @@
                     </h2>
 
                     <div class="tags">
-
                         <span class="tag">
                             Compagnie Gardavoe
                         </span>
@@ -1411,126 +1043,105 @@
                         <span class="tag">
                             Aalst
                         </span>
-
                     </div>
 
                     <p class="description">
-                        Grootschalige
-                        locatietheaterproductie in
-                        Aalst, gebaseerd op het werk
-                        van Sam Shepard. Begraven Kind
-                        speelde in september 2026 een
-                        reeks van tien voorstellingen.
+                        Grootschalige locatietheaterproductie
+                        in Aalst, gebaseerd op het werk van
+                        Sam Shepard. Begraven Kind speelde
+                        in september 2026 een reeks van tien
+                        voorstellingen.
                     </p>
-
                 </div>
-
             </div>
 
-
-            <!-- Affiche + horizontale foto 04 -->
+            <!-- Affiche en breed decorbeeld -->
 
             <div class="begraven-lead reveal">
-
                 <figure class="poster">
-
                     <img
                         src="images/Affiche_BegravenKind.jpg"
                         alt="Affiche van Begraven Kind"
                     >
-
                 </figure>
 
                 <figure class="begraven-wide">
-
                     <img
                         src="images/begraven-kind-04.jpg"
-                        alt="Scènebeeld uit Begraven Kind"
+                        alt="Breed scènebeeld uit Begraven Kind"
                     >
-
                 </figure>
-
             </div>
 
+            <!-- 01 links, 02/03 rechtsboven, 05 rechtsonder -->
 
-            <!-- Verticale foto 01 + vierkante foto's 02/03 -->
-
-            <div class="begraven-gallery reveal">
-
-                <figure class="portrait">
-
+            <div class="begraven-collage reveal">
+                <figure class="begraven-portrait">
                     <img
                         src="images/begraven-kind-01.jpg"
                         alt="Scènebeeld uit Begraven Kind"
                         loading="lazy"
                     >
-
                 </figure>
 
-                <figure class="square">
+                <div class="begraven-squares">
+                    <figure class="begraven-square">
+                        <img
+                            src="images/begraven-kind-02.jpg"
+                            alt="Scènebeeld uit Begraven Kind"
+                            loading="lazy"
+                        >
+                    </figure>
 
+                    <figure class="begraven-square">
+                        <img
+                            src="images/begraven-kind-03.jpg"
+                            alt="Scènebeeld uit Begraven Kind"
+                            loading="lazy"
+                        >
+                    </figure>
+                </div>
+
+                <figure class="begraven-fifth">
                     <img
-                        src="images/begraven-kind-02.jpg"
-                        alt="Scènebeeld uit Begraven Kind"
+                        src="images/begraven-kind-05.jpg"
+                        alt="Nachtelijk scènebeeld uit Begraven Kind"
                         loading="lazy"
                     >
-
                 </figure>
-
-                <figure class="square">
-
-                    <img
-                        src="images/begraven-kind-03.jpg"
-                        alt="Scènebeeld uit Begraven Kind"
-                        loading="lazy"
-                    >
-
-                </figure>
-
             </div>
-
 
             <!-- Aantal voorstellingen -->
 
             <div class="begraven-stat reveal">
-
                 <div class="big-stat">
                     10
                 </div>
 
                 <div class="stat-copy">
-                    voorstellingen in Aalst in
-                    september 2026. Begraven Kind
-                    vormt de meest recente productie
-                    binnen het geselecteerde werk.
+                    voorstellingen in Aalst in september
+                    2026. Begraven Kind vormt de meest
+                    recente productie binnen het
+                    geselecteerde werk.
                 </div>
-
             </div>
-
         </section>
 
-
-        <!-- =====================
-             THE WAY YOU LOOK TONIGHT
-        ====================== -->
+        <!-- THE WAY YOU LOOK TONIGHT -->
 
         <section class="production way">
-
             <div class="production-header reveal">
-
                 <div class="production-year">
                     2026 · Gent
                 </div>
 
                 <div>
-
                     <h2>
                         The Way You<br>
                         Look Tonight
                     </h2>
 
                     <div class="tags">
-
                         <span class="tag">
                             ARCA Theater
                         </span>
@@ -1538,76 +1149,56 @@
                         <span class="tag">
                             Gent
                         </span>
-
                     </div>
 
                     <p class="description">
-                        Theaterproductie gespeeld
-                        in ARCA Theater in Gent.
+                        Theaterproductie gespeeld in
+                        ARCA Theater in Gent.
                     </p>
-
                 </div>
-
             </div>
 
-
             <div class="way-gallery reveal">
-
                 <figure class="way-photo">
-
                     <img
                         src="images/way-01.jpg"
                         alt="Scènebeeld uit The Way You Look Tonight"
                         loading="lazy"
                     >
-
                 </figure>
 
                 <figure class="way-photo">
-
                     <img
                         src="images/way-02.jpg"
                         alt="Scènebeeld uit The Way You Look Tonight"
                         loading="lazy"
                     >
-
                 </figure>
 
                 <figure class="way-photo">
-
                     <img
                         src="images/way-03.jpg"
                         alt="Scènebeeld uit The Way You Look Tonight"
                         loading="lazy"
                     >
-
                 </figure>
-
             </div>
-
         </section>
 
-
-        <!-- =====================
-             STASIMAN
-        ====================== -->
+        <!-- STASIMAN -->
 
         <section class="production stasiman">
-
             <div class="production-header reveal">
-
                 <div class="production-year">
                     2025 · Gent
                 </div>
 
                 <div>
-
                     <h2>
                         Stasiman
                     </h2>
 
                     <div class="tags">
-
                         <span class="tag">
                             ARCA Theater
                         </span>
@@ -1615,59 +1206,40 @@
                         <span class="tag">
                             Gent
                         </span>
-
                     </div>
 
                     <p class="description">
-                        Theaterproductie gespeeld
-                        in ARCA Theater in Gent.
+                        Theaterproductie gespeeld in
+                        ARCA Theater in Gent.
                     </p>
-
                 </div>
-
             </div>
 
-
             <div class="stasiman-gallery reveal">
-
                 <figure class="stasiman-photo">
-
                     <img
                         src="images/Stasiman-01.jpg"
                         alt="Scènebeeld uit Stasiman"
                         loading="lazy"
                     >
-
                 </figure>
 
                 <figure class="stasiman-photo">
-
                     <img
                         src="images/Stasiman-02.jpg"
                         alt="Scènebeeld uit Stasiman"
                         loading="lazy"
                     >
-
                 </figure>
-
             </div>
-
         </section>
 
     </main>
 
+    <!-- CONTACT -->
 
-    <!-- =========================
-         CONTACT
-    ========================== -->
-
-    <section
-        class="contact"
-        id="contact"
-    >
-
+    <section class="contact" id="contact">
         <div>
-
             <div class="contact-label">
                 Contact
             </div>
@@ -1683,12 +1255,9 @@
             >
                 vandereviererobin@gmail.com ↗
             </a>
-
         </div>
 
-
         <footer>
-
             <span>
                 Robin Van De Reviere · Acteur
             </span>
@@ -1700,78 +1269,48 @@
             <span>
                 © 2026
             </span>
-
         </footer>
-
     </section>
 
-
-    <!-- =========================
-         JAVASCRIPT
-    ========================== -->
+    <!-- JAVASCRIPT -->
 
     <script>
-
-        /* Navigation background */
-
         const nav =
             document.getElementById("nav");
 
         window.addEventListener(
             "scroll",
             () => {
-
                 nav.classList.toggle(
                     "scrolled",
                     window.scrollY > 80
                 );
-
             }
         );
 
-
-        /* Scroll reveal */
-
         const revealElements =
-            document.querySelectorAll(
-                ".reveal"
-            );
+            document.querySelectorAll(".reveal");
 
         const observer =
             new IntersectionObserver(
-
                 entries => {
-
                     entries.forEach(
                         entry => {
-
-                            if (
-                                entry.isIntersecting
-                            ) {
-
-                                entry
-                                    .target
+                            if (entry.isIntersecting) {
+                                entry.target
                                     .classList
-                                    .add(
-                                        "visible"
-                                    );
+                                    .add("visible");
 
-                                observer
-                                    .unobserve(
-                                        entry.target
-                                    );
-
+                                observer.unobserve(
+                                    entry.target
+                                );
                             }
-
                         }
                     );
-
                 },
-
                 {
                     threshold: .10
                 }
-
             );
 
         revealElements.forEach(
@@ -1779,7 +1318,6 @@
                 observer.observe(element);
             }
         );
-
     </script>
 
 </body>

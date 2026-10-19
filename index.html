@@ -425,20 +425,18 @@
            BEGRAVEN KIND COLLAGE
         ========================= */
 
-        .begraven-collage {
-            display: grid;
+.begraven-collage {
+    display: grid;
 
-            grid-template-columns: .82fr 1.35fr;
-            gap: 14px;
+    /* Bloemenfoto smaller, rechterkant beduidend breder */
+    grid-template-columns: .58fr 1.42fr;
 
-            margin-top: 14px;
+    gap: 14px;
+    margin-top: 14px;
 
-            /*
-            De linker- en rechterkolom eindigen nu
-            altijd op exact dezelfde hoogte.
-            */
-            height: 820px;
-        }
+    /* Genoeg hoogte om foto 01 bijna volledig te tonen */
+    height: 900px;
+}
 
         .begraven-collage figure {
             position: relative;
@@ -448,11 +446,9 @@
 
         /* Linkerkolom: verticale foto 01 */
 
-        .begraven-portrait {
-    height: 680px;
+.begraven-portrait {
+    height: 900px;
     width: 100%;
-
-    align-self: start;
 
     min-width: 0;
     min-height: 0;

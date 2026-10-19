@@ -449,22 +449,26 @@
         /* Linkerkolom: verticale foto 01 */
 
         .begraven-portrait {
-            height: 100%;
-            min-width: 0;
-            min-height: 0;
-        }
+    height: 680px;
+    width: 100%;
+
+    align-self: start;
+
+    min-width: 0;
+    min-height: 0;
+
+    overflow: hidden;
+}
 
         .begraven-portrait img {
-            width: 100%;
-            height: 100%;
+    width: 100%;
+    height: 100%;
 
-            object-fit: cover;
+    object-fit: cover;
 
-            /*
-            Prioriteit voor het hoofd en de bovenkant.
-            */
-            object-position: center top;
-        }
+    /* hoofd blijft volledig zichtbaar */
+    object-position: center top;
+}
 
         /* Rechterkolom */
 

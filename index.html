@@ -1,735 +1,858 @@
-
 <!DOCTYPE html>
 <html lang="nl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Robin Van De Reviere | Acteur</title>
-  <meta
-    name="description"
-    content="Portfolio van Robin Van De Reviere - acteur uit Gent."
-  >
+<title>Robin Van De Reviere | Acteur</title>
+<meta name="description" content="Portfolio van Robin Van De Reviere - acteur uit Gent.">
 
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap');
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap');
 
-    :root {
-      --black: #11110f;
-      --warm-black: #181713;
-      --cream: #f4f0e6;
-      --muted: #b8b1a3;
-      --yellow: #e7d52d;
-      --teal: #3aa69a;
-      --rust: #d65b3e;
-      --line: rgba(244,240,230,.18);
+:root {
+    --black: #11110f;
+    --cream: #f5f1e8;
+
+    --buried-yellow: #f4c614;
+    --buried-white: #f7f5ef;
+    --buried-black: #11100d;
+
+    --way-green: #062d29;
+    --way-amber: #d89749;
+    --way-light: #e7dfcf;
+
+    --stasi-blue: #111b2e;
+    --stasi-accent: #8fa6d6;
+    --stasi-light: #e2e7ef;
+
+    --line: rgba(255,255,255,.16);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--black);
+    color: var(--cream);
+    font-family: "DM Sans", sans-serif;
+    overflow-x: hidden;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+img {
+    display: block;
+    width: 100%;
+}
+
+::selection {
+    background: var(--buried-yellow);
+    color: #111;
+}
+
+
+/* NAVIGATION */
+
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    z-index: 100;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 25px 5vw;
+
+    transition: .35s ease;
+}
+
+nav.scrolled {
+    padding-top: 16px;
+    padding-bottom: 16px;
+
+    background: rgba(10,10,9,.82);
+    backdrop-filter: blur(15px);
+
+    border-bottom: 1px solid rgba(255,255,255,.07);
+}
+
+.logo {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+}
+
+.nav-links {
+    display: flex;
+    gap: 28px;
+
+    font-size: 11px;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+}
+
+.nav-links a {
+    opacity: .65;
+    transition: .25s;
+}
+
+.nav-links a:hover {
+    opacity: 1;
+}
+
+
+/* HERO */
+
+.hero {
+    min-height: 100vh;
+
+    position: relative;
+
+    display: flex;
+    align-items: flex-end;
+
+    overflow: hidden;
+
+    padding: 0 5vw 8vh;
+}
+
+.hero-image {
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            to top,
+            rgba(10,10,9,.98) 0%,
+            rgba(10,10,9,.42) 44%,
+            rgba(10,10,9,.06) 76%
+        ),
+        url("images/begraven-kind-02.jpg")
+        center 32% / cover no-repeat;
+
+    transform: scale(1.05);
+
+    animation: heroZoom 12s ease forwards;
+}
+
+@keyframes heroZoom {
+    to {
+        transform: scale(1);
     }
+}
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+.hero-content {
+    position: relative;
+    z-index: 2;
 
-    html {
-      scroll-behavior: smooth;
-    }
+    max-width: 1100px;
+}
 
-    body {
-      background: var(--black);
-      color: var(--cream);
-      font-family: "DM Sans", sans-serif;
-      overflow-x: hidden;
-    }
+.eyebrow {
+    color: var(--buried-yellow);
 
-    body::selection {
-      background: var(--yellow);
-      color: var(--black);
-    }
+    font-size: 11px;
+    font-weight: 600;
 
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
+    text-transform: uppercase;
+    letter-spacing: .22em;
 
-    /* -------------------------
-       NAVIGATION
-    -------------------------- */
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(57px, 9vw, 145px);
+
+    line-height: .84;
+    letter-spacing: -.045em;
+}
+
+.hero-intro {
+    margin-top: 38px;
+
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.hero-intro p {
+    color: rgba(255,255,255,.72);
+
+    max-width: 420px;
+
+    line-height: 1.7;
+
+    font-size: 14px;
+}
+
+.scroll-button {
+    width: 48px;
+    height: 48px;
+
+    border: 1px solid rgba(255,255,255,.35);
+    border-radius: 100%;
+
+    display: grid;
+    place-items: center;
+
+    animation: bounce 2.3s infinite;
+}
+
+@keyframes bounce {
+    0%,100% { transform: translateY(0); }
+    50% { transform: translateY(6px); }
+}
+
+
+/* PROFILE */
+
+.profile {
+    min-height: 70vh;
+
+    padding: 120px 8vw;
+
+    display: grid;
+    grid-template-columns: .7fr 2fr;
+
+    gap: 7vw;
+}
+
+.label {
+    font-size: 11px;
+    text-transform: uppercase;
+
+    letter-spacing: .2em;
+
+    opacity: .55;
+
+    padding-top: 12px;
+}
+
+.profile-copy {
+    max-width: 1000px;
+}
+
+.profile-copy h2 {
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(38px, 5.5vw, 78px);
+
+    font-weight: 500;
+
+    line-height: 1.06;
+    letter-spacing: -.025em;
+}
+
+.profile-copy em {
+    color: var(--buried-yellow);
+    font-weight: 500;
+}
+
+.profile-copy p {
+    margin-top: 35px;
+
+    max-width: 670px;
+
+    color: #aaa396;
+
+    font-size: 16px;
+
+    line-height: 1.8;
+}
+
+
+/* GENERIC PRODUCTION */
+
+.production {
+    position: relative;
+
+    padding: 125px 5vw;
+}
+
+.production-header {
+    display: grid;
+
+    grid-template-columns: .65fr 2fr;
+
+    gap: 6vw;
+
+    margin-bottom: 60px;
+}
+
+.production-year {
+    padding-top: 14px;
+
+    font-size: 11px;
+
+    text-transform: uppercase;
+    letter-spacing: .18em;
+
+    opacity: .58;
+}
+
+.production h2 {
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(50px, 7vw, 105px);
+
+    line-height: .92;
+    letter-spacing: -.04em;
+
+    font-weight: 500;
+}
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 9px;
+
+    margin-top: 25px;
+}
+
+.tag {
+    padding: 8px 14px;
+
+    border-radius: 100px;
+
+    border: 1px solid currentColor;
+
+    font-size: 10px;
+    text-transform: uppercase;
+
+    letter-spacing: .09em;
+
+    opacity: .66;
+}
+
+.description {
+    max-width: 660px;
+
+    margin-top: 28px;
+
+    line-height: 1.8;
+
+    font-size: 15px;
+
+    opacity: .7;
+}
+
+
+/* -------------------------------------------------
+   BEGRAVEN KIND
+-------------------------------------------------- */
+
+.begraven {
+    background: var(--buried-white);
+    color: var(--buried-black);
+
+    padding-top: 145px;
+}
+
+.begraven h2 {
+    color: #111;
+}
+
+.begraven .production-year {
+    color: #73681d;
+}
+
+.begraven .tag {
+    color: #786a00;
+}
+
+.begraven .description {
+    color: #504c42;
+    opacity: 1;
+}
+
+.yellow-rule {
+    width: 80px;
+    height: 8px;
+
+    background: var(--buried-yellow);
+
+    margin-bottom: 35px;
+}
+
+
+/* POSTER + HERO IMAGE */
+
+.begraven-lead {
+    display: grid;
+
+    grid-template-columns: .68fr 1.7fr;
+
+    gap: 14px;
+
+    margin-top: 25px;
+}
+
+.poster {
+    background: white;
+
+    min-height: 720px;
+
+    overflow: hidden;
+}
+
+.poster img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
+
+.main-stage-photo {
+    min-height: 720px;
+
+    overflow: hidden;
+}
+
+.main-stage-photo img {
+    height: 100%;
+
+    object-fit: cover;
+
+    transition: transform 1s ease;
+}
+
+.main-stage-photo:hover img {
+    transform: scale(1.025);
+}
+
+
+/* SECONDARY MOSAIC */
+
+.begraven-mosaic {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr 1fr;
+
+    gap: 14px;
+
+    margin-top: 14px;
+}
+
+.begraven-mosaic .shot {
+    height: 570px;
+
+    overflow: hidden;
+}
+
+.begraven-mosaic img {
+    height: 100%;
+
+    object-fit: cover;
+
+    transition: transform .8s ease;
+}
+
+.begraven-mosaic .shot:hover img {
+    transform: scale(1.035);
+}
+
+
+/* STAT */
+
+.begraven-stat {
+    margin-top: 85px;
+
+    border-top: 1px solid rgba(0,0,0,.18);
+
+    padding-top: 40px;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 40px;
+}
+
+.big-stat {
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(70px, 10vw, 150px);
+
+    color: var(--buried-yellow);
+
+    line-height: .8;
+}
+
+.stat-copy {
+    max-width: 460px;
+
+    align-self: end;
+
+    font-size: 15px;
+
+    line-height: 1.8;
+
+    color: #565145;
+}
+
+
+/* -------------------------------------------------
+   THE WAY YOU LOOK TONIGHT
+-------------------------------------------------- */
+
+.way {
+    background: var(--way-green);
+
+    color: var(--way-light);
+
+    padding-top: 145px;
+}
+
+.way h2 {
+    color: var(--way-amber);
+}
+
+.way .tag {
+    color: var(--way-amber);
+}
+
+.way .description {
+    color: #cad1ca;
+}
+
+.way-gallery {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr 1fr;
+
+    gap: 13px;
+
+    height: 760px;
+}
+
+.way-photo {
+    overflow: hidden;
+
+    position: relative;
+}
+
+.way-photo:nth-child(2) {
+    transform: translateY(55px);
+}
+
+.way-photo img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition:
+        transform .8s ease,
+        filter .8s ease;
+}
+
+.way-photo:hover img {
+    transform: scale(1.03);
+}
+
+
+/* -------------------------------------------------
+   STASIMAN
+-------------------------------------------------- */
+
+.stasiman {
+    background: var(--stasi-blue);
+
+    color: var(--stasi-light);
+
+    padding-top: 150px;
+    padding-bottom: 160px;
+}
+
+.stasiman h2 {
+    color: var(--stasi-accent);
+}
+
+.stasiman .tag {
+    color: var(--stasi-accent);
+}
+
+.stasiman .description {
+    color: #b6c1d1;
+}
+
+.stasiman-image {
+    width: 100%;
+
+    height: min(78vh, 850px);
+
+    overflow: hidden;
+
+    position: relative;
+}
+
+.stasiman-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition: transform 1.1s ease;
+}
+
+.stasiman-image:hover img {
+    transform: scale(1.025);
+}
+
+
+/* CONTACT */
+
+.contact {
+    min-height: 70vh;
+
+    background: var(--buried-yellow);
+
+    color: #111;
+
+    padding: 105px 6vw 55px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.contact-label {
+    font-size: 11px;
+
+    text-transform: uppercase;
+
+    letter-spacing: .2em;
+
+    opacity: .6;
+}
+
+.contact h2 {
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(58px, 9vw, 135px);
+
+    line-height: .87;
+
+    letter-spacing: -.045em;
+
+    font-weight: 500;
+
+    margin: 45px 0 65px;
+}
+
+.email {
+    display: inline-block;
+
+    font-size: clamp(18px, 2vw, 29px);
+
+    border-bottom: 2px solid #111;
+
+    padding-bottom: 4px;
+}
+
+footer {
+    margin-top: 90px;
+
+    padding-top: 20px;
+
+    border-top: 1px solid rgba(0,0,0,.25);
+
+    display: flex;
+    justify-content: space-between;
+
+    font-size: 10px;
+
+    text-transform: uppercase;
+
+    letter-spacing: .13em;
+}
+
+
+/* REVEALS */
+
+.reveal {
+    opacity: 0;
+    transform: translateY(35px);
+
+    transition:
+        opacity .9s ease,
+        transform .9s cubic-bezier(.2,.7,.2,1);
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* MOBILE */
+
+@media (max-width: 800px) {
 
     nav {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      padding: 26px 5vw;
-
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-
-      z-index: 100;
-
-      transition:
-        background .4s ease,
-        padding .4s ease,
-        backdrop-filter .4s ease;
-    }
-
-    nav.scrolled {
-      padding-top: 17px;
-      padding-bottom: 17px;
-
-      background: rgba(17,17,15,.80);
-      backdrop-filter: blur(14px);
-      border-bottom: 1px solid rgba(255,255,255,.07);
-    }
-
-    .logo {
-      font-size: 13px;
-      font-weight: 600;
-      letter-spacing: .18em;
-      text-transform: uppercase;
+        padding: 19px;
     }
 
     .nav-links {
-      display: flex;
-      gap: 28px;
-
-      font-size: 12px;
-      text-transform: uppercase;
-      letter-spacing: .13em;
+        gap: 13px;
     }
 
-    .nav-links a {
-      opacity: .7;
-      transition: opacity .25s ease;
+    .nav-links a:first-child {
+        display: none;
     }
-
-    .nav-links a:hover {
-      opacity: 1;
-    }
-
-    /* -------------------------
-       HERO
-    -------------------------- */
 
     .hero {
-      min-height: 100vh;
+        min-height: 92vh;
 
-      display: flex;
-      align-items: flex-end;
-
-      position: relative;
-      overflow: hidden;
-
-      padding: 10vh 5vw 8vh;
+        padding:
+            100px
+            20px
+            45px;
     }
 
     .hero-image {
-      position: absolute;
-      inset: 0;
-
-      background:
-        linear-gradient(
-          90deg,
-          rgba(0,0,0,.34),
-          rgba(0,0,0,.05)
-        ),
-        url("images/begraven-kind-01.jpg")
-        center 28% / cover no-repeat;
-
-      transform: scale(1.04);
-
-      animation: heroZoom 12s ease-out forwards;
-    }
-
-    @keyframes heroZoom {
-      to {
-        transform: scale(1);
-      }
-    }
-
-    .hero::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-
-      background:
-        linear-gradient(
-          to top,
-          rgba(17,17,15,.98) 0%,
-          rgba(17,17,15,.42) 42%,
-          rgba(17,17,15,.08) 70%
-        );
-    }
-
-    .hero-content {
-      position: relative;
-      z-index: 2;
-
-      max-width: 1100px;
-    }
-
-    .eyebrow {
-      color: var(--yellow);
-
-      font-size: 12px;
-      font-weight: 600;
-
-      text-transform: uppercase;
-      letter-spacing: .2em;
-
-      margin-bottom: 18px;
+        background-position: 55% center;
     }
 
     .hero h1 {
-      font-family: "Playfair Display", serif;
-      font-size: clamp(55px, 9vw, 145px);
-      line-height: .84;
+        font-size: clamp(55px, 17vw, 86px);
 
-      max-width: 1100px;
-      letter-spacing: -.045em;
+        line-height: .9;
     }
 
-    .hero-bottom {
-      margin-top: 42px;
-
-      display: flex;
-      align-items: center;
-      gap: 32px;
-    }
-
-    .hero-bottom p {
-      max-width: 410px;
-
-      color: rgba(244,240,230,.73);
-
-      font-size: 15px;
-      line-height: 1.7;
-    }
-
-    .scroll-cue {
-      border: 1px solid rgba(255,255,255,.35);
-
-      border-radius: 100px;
-
-      width: 48px;
-      height: 48px;
-
-      display: grid;
-      place-items: center;
-
-      flex-shrink: 0;
-
-      font-size: 19px;
-
-      animation: pulse 2.2s infinite;
-    }
-
-    @keyframes pulse {
-      0%,100% {
-        transform: translateY(0);
-      }
-
-      50% {
-        transform: translateY(7px);
-      }
-    }
-
-    /* -------------------------
-       INTRO
-    -------------------------- */
-
-    .intro {
-      min-height: 70vh;
-
-      padding: 120px 8vw;
-
-      display: grid;
-
-      grid-template-columns: .8fr 2fr;
-
-      gap: 8vw;
-
-      align-items: start;
-    }
-
-    .section-label {
-      font-size: 11px;
-      font-weight: 600;
-
-      text-transform: uppercase;
-      letter-spacing: .2em;
-
-      color: var(--muted);
-
-      padding-top: 12px;
-    }
-
-    .intro-copy {
-      max-width: 1000px;
-    }
-
-    .intro-copy h2 {
-      font-family: "Playfair Display", serif;
-
-      font-size: clamp(37px, 5.3vw, 77px);
-
-      line-height: 1.07;
-      letter-spacing: -.025em;
-
-      font-weight: 500;
-    }
-
-    .intro-copy h2 em {
-      color: var(--yellow);
-      font-weight: 500;
-    }
-
-    .intro-copy p {
-      margin-top: 38px;
-
-      max-width: 670px;
-
-      font-size: 17px;
-      color: var(--muted);
-
-      line-height: 1.8;
-    }
-
-    /* -------------------------
-       WORK
-    -------------------------- */
-
-    .work {
-      padding: 30px 5vw 140px;
-    }
-
-    .work-header {
-      border-bottom: 1px solid var(--line);
-
-      padding-bottom: 22px;
-      margin-bottom: 70px;
-
-      display: flex;
-      align-items: end;
-      justify-content: space-between;
-    }
-
-    .work-header h2 {
-      font-family: "Playfair Display", serif;
-
-      font-size: clamp(45px, 6vw, 85px);
-
-      font-weight: 500;
-    }
-
-    .work-header span {
-      color: var(--muted);
-
-      font-size: 12px;
-
-      text-transform: uppercase;
-      letter-spacing: .15em;
-
-      padding-bottom: 10px;
-    }
-
-    /* -------------------------
-       PRODUCTION
-    -------------------------- */
-
-    .production {
-      padding-bottom: 140px;
-      margin-bottom: 140px;
-
-      border-bottom: 1px solid var(--line);
-    }
-
-    .production:last-child {
-      border-bottom: 0;
-      margin-bottom: 0;
-    }
-
-    .production-heading {
-      display: grid;
-
-      grid-template-columns: 1fr 2fr;
-
-      gap: 6vw;
-
-      margin-bottom: 55px;
-    }
-
-    .production-year {
-      color: var(--muted);
-
-      font-size: 12px;
-
-      text-transform: uppercase;
-      letter-spacing: .16em;
-
-      padding-top: 12px;
-    }
-
-    .production-title h3 {
-      font-family: "Playfair Display", serif;
-
-      font-size: clamp(42px, 6.5vw, 96px);
-
-      line-height: .96;
-      letter-spacing: -.035em;
-
-      font-weight: 500;
-    }
-
-    .meta {
-      margin-top: 25px;
-
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-    }
-
-    .pill {
-      border: 1px solid var(--line);
-
-      border-radius: 100px;
-
-      padding: 8px 15px;
-
-      font-size: 11px;
-      letter-spacing: .08em;
-
-      text-transform: uppercase;
-
-      color: var(--muted);
-    }
-
-    .production-description {
-      max-width: 640px;
-
-      margin-top: 30px;
-
-      color: var(--muted);
-
-      line-height: 1.75;
-
-      font-size: 16px;
-    }
-
-    /* -------------------------
-       GALLERIES
-    -------------------------- */
-
-    .gallery-feature {
-      display: grid;
-
-      grid-template-columns: 1.2fr .8fr;
-
-      grid-template-rows: 400px 400px;
-
-      gap: 13px;
-    }
-
-    .gallery-feature .photo:first-child {
-      grid-row: 1 / 3;
-    }
-
-    .photo {
-      overflow: hidden;
-
-      background: #26251f;
-
-      position: relative;
-    }
-
-    .photo img {
-      width: 100%;
-      height: 100%;
-
-      display: block;
-
-      object-fit: cover;
-
-      transition:
-        transform .8s cubic-bezier(.2,.7,.2,1),
-        filter .8s ease;
-    }
-
-    .photo:hover img {
-      transform: scale(1.035);
-    }
-
-    .gallery-3 {
-      display: grid;
-
-      grid-template-columns: 1.1fr .9fr .9fr;
-
-      height: 650px;
-
-      gap: 13px;
-    }
-
-    .gallery-2 {
-      display: grid;
-
-      grid-template-columns: 1.15fr .85fr;
-
-      height: 650px;
-
-      gap: 13px;
-    }
-
-    .production.begraven .production-title h3 {
-      color: #efe8d8;
-    }
-
-    .production.way .production-title h3 {
-      color: #df8d57;
-    }
-
-    .production.stasi .production-title h3 {
-      color: #d2d9ed;
-    }
-
-    /* -------------------------
-       CONTACT
-    -------------------------- */
-
-    .contact {
-      min-height: 68vh;
-
-      background: var(--cream);
-      color: var(--black);
-
-      padding: 110px 6vw 60px;
-
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-
-    .contact-small {
-      font-size: 12px;
-      text-transform: uppercase;
-
-      letter-spacing: .17em;
-
-      opacity: .6;
-    }
-
-    .contact h2 {
-      font-family: "Playfair Display", serif;
-
-      font-size: clamp(50px, 8.5vw, 130px);
-
-      line-height: .9;
-      letter-spacing: -.045em;
-
-      margin: 45px 0 60px;
-
-      max-width: 1000px;
-    }
-
-    .contact-link {
-      display: inline-block;
-
-      font-size: clamp(19px, 2vw, 31px);
-
-      border-bottom: 2px solid var(--black);
-
-      padding-bottom: 5px;
-
-      transition: opacity .2s ease;
-    }
-
-    .contact-link:hover {
-      opacity: .55;
-    }
-
-    footer {
-      margin-top: 95px;
-
-      padding-top: 20px;
-
-      border-top: 1px solid rgba(0,0,0,.20);
-
-      display: flex;
-      justify-content: space-between;
-
-      gap: 20px;
-
-      font-size: 11px;
-
-      text-transform: uppercase;
-
-      letter-spacing: .12em;
-
-      opacity: .6;
-    }
-
-    /* -------------------------
-       SCROLL ANIMATIONS
-    -------------------------- */
-
-    .reveal {
-      opacity: 0;
-
-      transform: translateY(35px);
-
-      transition:
-        opacity .9s ease,
-        transform .9s cubic-bezier(.2,.7,.2,1);
-    }
-
-    .reveal.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    /* -------------------------
-       MOBILE
-    -------------------------- */
-
-    @media (max-width: 800px) {
-
-      nav {
-        padding: 20px;
-      }
-
-      .nav-links {
-        gap: 14px;
-      }
-
-      .nav-links a:first-child {
-        display: none;
-      }
-
-      .hero {
-        min-height: 92vh;
-        padding: 100px 22px 45px;
-      }
-
-      .hero-image {
-        background-position: 48% center;
-      }
-
-      .hero h1 {
-        font-size: clamp(53px, 17vw, 85px);
-        line-height: .91;
-      }
-
-      .hero-bottom {
-        align-items: flex-start;
-      }
-
-      .intro {
+    .profile {
         display: block;
 
         padding: 90px 22px;
-      }
+    }
 
-      .section-label {
-        margin-bottom: 35px;
-      }
+    .label {
+        margin-bottom: 32px;
+    }
 
-      .intro-copy p {
-        font-size: 15px;
-      }
-
-      .work {
+    .production {
         padding:
-          20px
-          14px
-          90px;
-      }
+            90px
+            14px;
+    }
 
-      .work-header {
-        margin-bottom: 50px;
-      }
-
-      .production {
-        margin-bottom: 85px;
-        padding-bottom: 85px;
-      }
-
-      .production-heading {
+    .production-header {
         display: block;
 
         padding: 0 8px;
+    }
 
-        margin-bottom: 35px;
-      }
+    .production-year {
+        margin-bottom: 18px;
+    }
 
-      .production-year {
-        margin-bottom: 15px;
-      }
+    .production h2 {
+        font-size: 54px;
+    }
 
-      .production-title h3 {
-        font-size: 50px;
-      }
+    .begraven-lead {
+        grid-template-columns: .8fr 1.2fr;
 
-      .gallery-feature,
-      .gallery-3,
-      .gallery-2 {
-        display: grid;
+        gap: 7px;
+    }
+
+    .poster,
+    .main-stage-photo {
+        min-height: 420px;
+    }
+
+    .begraven-mosaic {
+        grid-template-columns: 1fr 1fr;
+
+        gap: 7px;
+    }
+
+    .begraven-mosaic .shot {
+        height: 390px;
+    }
+
+    .begraven-mosaic .shot:last-child {
+        grid-column: 1 / 3;
+    }
+
+    .begraven-stat {
+        grid-template-columns: 1fr;
+    }
+
+    .way-gallery {
+        height: auto;
 
         grid-template-columns: 1fr 1fr;
 
-        grid-template-rows: auto;
-
-        height: auto;
-
         gap: 7px;
-      }
-
-      .gallery-feature .photo:first-child {
-        grid-row: auto;
-
-        grid-column: 1 / 3;
-
-        height: 520px;
-      }
-
-      .gallery-feature .photo:not(:first-child) {
-        height: 280px;
-      }
-
-      .gallery-3 .photo,
-      .gallery-2 .photo {
-        height: 330px;
-      }
-
-      .gallery-3 .photo:first-child {
-        grid-column: 1 / 3;
-        height: 480px;
-      }
-
-      .contact {
-        padding: 90px 23px 35px;
-      }
-
-      footer {
-        flex-direction: column;
-      }
     }
 
-  </style>
+    .way-photo {
+        height: 440px;
+    }
+
+    .way-photo:first-child {
+        grid-column: 1 / 3;
+
+        height: 590px;
+    }
+
+    .way-photo:nth-child(2) {
+        transform: none;
+    }
+
+    .stasiman-image {
+        height: 55vh;
+    }
+
+    .contact {
+        padding: 90px 22px 35px;
+    }
+
+    footer {
+        flex-direction: column;
+
+        gap: 8px;
+    }
+}
+
+</style>
 </head>
+
 
 <body>
 
 <nav id="nav">
-  <a class="logo" href="#top">
-    Robin Van De Reviere
-  </a>
 
-  <div class="nav-links">
-    <a href="#about">Over</a>
-    <a href="#work">Producties</a>
-    <a href="#contact">Contact</a>
-  </div>
+    <a class="logo" href="#top">
+        Robin Van De Reviere
+    </a>
+
+    <div class="nav-links">
+        <a href="#about">Over</a>
+        <a href="#work">Producties</a>
+        <a href="#contact">Contact</a>
+    </div>
+
 </nav>
 
 
@@ -737,383 +860,426 @@
 
 <header class="hero" id="top">
 
-  <div class="hero-image"></div>
+    <div class="hero-image"></div>
 
-  <div class="hero-content">
+    <div class="hero-content">
 
-    <div class="eyebrow">
-      Acteur · Gent
-    </div>
+        <div class="eyebrow">
+            Acteur · Gent
+        </div>
 
-    <h1>
-      Robin<br>
-      Van De Reviere
-    </h1>
+        <h1>
+            Robin<br>
+            Van De Reviere
+        </h1>
 
-    <div class="hero-bottom">
+        <div class="hero-intro">
 
-      <p>
-        Theateracteur met ervaring in zaal- en locatietheater.
-        Een selectie uit recent werk.
-      </p>
+            <p>
+                Theateracteur met ervaring in zaaltheater
+                en grootschalig locatietheater.
+            </p>
 
-      <a
-        href="#about"
-        class="scroll-cue"
-        aria-label="Scroll naar beneden"
-      >
-        ↓
-      </a>
+            <a href="#about" class="scroll-button">
+                ↓
+            </a>
+
+        </div>
 
     </div>
-
-  </div>
 
 </header>
 
 
-<!-- ABOUT -->
+<!-- PROFILE -->
 
-<section class="intro" id="about">
+<section class="profile" id="about">
 
-  <div class="section-label reveal">
-    01 / Profiel
-  </div>
+    <div class="label reveal">
+        01 / Profiel
+    </div>
 
-  <div class="intro-copy reveal">
+    <div class="profile-copy reveal">
 
-    <h2>
-      Op zoek naar <em>spel</em> dat leeft,
-      beweegt en contact maakt.
-    </h2>
+        <h2>
+            Spelen vanuit <em>contact</em>,
+            verbeelding en beweging.
+        </h2>
 
-    <p>
-      Robin Van De Reviere is acteur uit Gent met ervaring
-      in zowel zaaltheater als grootschalig locatietheater.
-      Van intieme scènes in ARCA tot een speelreeks voor
-      honderden toeschouwers per avond in Aalst.
-    </p>
+        <p>
+            Robin Van De Reviere is acteur uit Gent met
+            ervaring in zowel intiem zaaltheater als
+            grootschalig locatietheater. Recent werk
+            omvat producties in ARCA Theater Gent en
+            de locatietheaterproductie Begraven Kind
+            in Aalst.
+        </p>
 
-  </div>
+    </div>
 
 </section>
 
 
-<!-- WORK -->
-
-<main class="work" id="work">
-
-  <div class="work-header reveal">
-
-    <h2>Producties</h2>
-
-    <span>
-      Selected work · 2025–2026
-    </span>
-
-  </div>
+<main id="work">
 
 
-  <!-- BEGRAVEN KIND -->
+<!-- BEGRAVEN KIND -->
 
-  <article class="production begraven">
+<section class="production begraven">
 
-    <div class="production-heading reveal">
+    <div class="production-header reveal">
 
-      <div class="production-year">
-        2026 · Aalst
-      </div>
+        <div class="production-year">
+            2026 · Aalst
+        </div>
 
-      <div class="production-title">
+        <div>
 
-        <h3>Begraven Kind</h3>
+            <div class="yellow-rule"></div>
 
-        <div class="meta">
+            <h2>
+                Begraven Kind
+            </h2>
 
-          <span class="pill">
-            Compagnie Gardavoe
-          </span>
+            <div class="tags">
 
-          <span class="pill">
-            Locatietheater
-          </span>
+                <span class="tag">
+                    Compagnie Gardavoe
+                </span>
 
-          <span class="pill">
-            10 voorstellingen
-          </span>
+                <span class="tag">
+                    Locatietheater
+                </span>
 
-          <span class="pill">
-            Aalst
-          </span>
+                <span class="tag">
+                    10 voorstellingen
+                </span>
+
+                <span class="tag">
+                    Aalst
+                </span>
+
+            </div>
+
+            <p class="description">
+                Grootschalige locatietheaterproductie
+                in Aalst, gebaseerd op het werk van
+                Sam Shepard. Begraven Kind speelde
+                in september 2026 een reeks van tien
+                voorstellingen.
+            </p>
 
         </div>
 
-        <p class="production-description">
-          Een grootschalige locatietheaterproductie in Aalst.
-          Begraven Kind speelde in september 2026 een reeks van
-          tien voorstellingen. Een productie waarin tekstspel,
-          ensemblewerk en de fysieke speelomgeving samenkomen
-          in een uitzonderlijke theatrale setting.
-        </p>
+    </div>
 
-      </div>
+
+    <div class="begraven-lead reveal">
+
+        <figure class="poster">
+
+            <img
+                src="images/Affiche_BegravenKind.jpg"
+                alt="Affiche Begraven Kind"
+            >
+
+        </figure>
+
+        <figure class="main-stage-photo">
+
+            <img
+                src="images/begraven-kind-03.jpg"
+                alt="Scènebeeld Begraven Kind"
+            >
+
+        </figure>
 
     </div>
 
 
-    <div class="gallery-feature reveal">
+    <div class="begraven-mosaic reveal">
 
-      <figure class="photo">
-        <img
-          src="images/begraven-kind-01.jpg"
-          alt="Begraven Kind - scènebeeld"
-          loading="lazy"
-        >
-      </figure>
+        <figure class="shot">
+            <img
+                src="images/begraven-kind-01.jpg"
+                alt="Scènebeeld Begraven Kind"
+                loading="lazy"
+            >
+        </figure>
 
-      <figure class="photo">
-        <img
-          src="images/begraven-kind-02.jpg"
-          alt="Begraven Kind - scènebeeld"
-          loading="lazy"
-        >
-      </figure>
+        <figure class="shot">
+            <img
+                src="images/begraven-kind-02.jpg"
+                alt="Scènebeeld Begraven Kind"
+                loading="lazy"
+            >
+        </figure>
 
-      <figure class="photo">
-        <img
-          src="images/begraven-kind-03.jpg"
-          alt="Begraven Kind - scènebeeld"
-          loading="lazy"
-        >
-      </figure>
+        <figure class="shot">
+            <img
+                src="images/begraven-kind-04.jpg"
+                alt="Scènebeeld Begraven Kind"
+                loading="lazy"
+            >
+        </figure>
 
     </div>
 
-  </article>
+
+    <div class="begraven-stat reveal">
+
+        <div class="big-stat">
+            10
+        </div>
+
+        <div class="stat-copy">
+            voorstellingen in Aalst in september 2026.
+            Begraven Kind vormt de meest recente
+            productie binnen het geselecteerde werk.
+        </div>
+
+    </div>
+
+</section>
 
 
-  <!-- THE WAY YOU LOOK TONIGHT -->
 
-  <article class="production way">
+<!-- THE WAY YOU LOOK TONIGHT -->
 
-    <div class="production-heading reveal">
+<section class="production way">
 
-      <div class="production-year">
-        2026 · Gent
-      </div>
+    <div class="production-header reveal">
 
-      <div class="production-title">
+        <div class="production-year">
+            2026 · Gent
+        </div>
 
-        <h3>
-          The Way You<br>
-          Look Tonight
-        </h3>
+        <div>
 
-        <div class="meta">
+            <h2>
+                The Way You<br>
+                Look Tonight
+            </h2>
 
-          <span class="pill">
-            ARCA Theater
-          </span>
+            <div class="tags">
 
-          <span class="pill">
-            Gent
-          </span>
+                <span class="tag">
+                    ARCA Theater
+                </span>
+
+                <span class="tag">
+                    Gent
+                </span>
+
+            </div>
+
+            <p class="description">
+                Theaterproductie gespeeld in
+                ARCA Theater in Gent.
+            </p>
 
         </div>
 
-        <p class="production-description">
-          Theaterproductie gespeeld in ARCA Theater in Gent,
-          met een intiemere speelstijl en directe nabijheid
-          tussen spelers en publiek.
-        </p>
-
-      </div>
-
     </div>
 
 
-    <div class="gallery-3 reveal">
+    <div class="way-gallery reveal">
 
-      <figure class="photo">
-        <img
-          src="images/way-01.jpg"
-          alt="The Way You Look Tonight - scènebeeld"
-          loading="lazy"
-        >
-      </figure>
+        <figure class="way-photo">
 
-      <figure class="photo">
-        <img
-          src="images/way-02.jpg"
-          alt="The Way You Look Tonight - scènebeeld"
-          loading="lazy"
-        >
-      </figure>
+            <img
+                src="images/way-01.jpg"
+                alt="The Way You Look Tonight"
+                loading="lazy"
+            >
 
-      <figure class="photo">
-        <img
-          src="images/way-03.jpg"
-          alt="The Way You Look Tonight - scènebeeld"
-          loading="lazy"
-        >
-      </figure>
+        </figure>
+
+
+        <figure class="way-photo">
+
+            <img
+                src="images/way-02.jpg"
+                alt="The Way You Look Tonight"
+                loading="lazy"
+            >
+
+        </figure>
+
+
+        <figure class="way-photo">
+
+            <img
+                src="images/way-03.jpg"
+                alt="The Way You Look Tonight"
+                loading="lazy"
+            >
+
+        </figure>
 
     </div>
 
-  </article>
+</section>
 
 
-  <!-- STASIMAN -->
 
-  <article class="production stasi">
+<!-- STASIMAN -->
 
-    <div class="production-heading reveal">
+<section class="production stasiman">
 
-      <div class="production-year">
-        2025 · Gent
-      </div>
+    <div class="production-header reveal">
 
-      <div class="production-title">
+        <div class="production-year">
+            2025 · Gent
+        </div>
 
-        <h3>Stasiman</h3>
+        <div>
 
-        <div class="meta">
+            <h2>
+                Stasiman
+            </h2>
 
-          <span class="pill">
-            ARCA Theater
-          </span>
+            <div class="tags">
 
-          <span class="pill">
-            Gent
-          </span>
+                <span class="tag">
+                    ARCA Theater
+                </span>
+
+                <span class="tag">
+                    Gent
+                </span>
+
+            </div>
+
+            <p class="description">
+                Theaterproductie gespeeld in
+                ARCA Theater in Gent.
+            </p>
 
         </div>
 
-        <p class="production-description">
-          Theaterproductie gespeeld in ARCA Theater in Gent.
-        </p>
-
-      </div>
-
     </div>
 
 
-    <div class="gallery-2 reveal">
+    <figure class="stasiman-image reveal">
 
-      <figure class="photo">
         <img
-          src="images/stasiman-01.jpg"
-          alt="Stasiman - scènebeeld"
-          loading="lazy"
+            src="images/Stasiman-02.jpg"
+            alt="Stasiman - scènebeeld"
+            loading="lazy"
         >
-      </figure>
 
-      <figure class="photo">
-        <img
-          src="images/stasiman-02.jpg"
-          alt="Stasiman - scènebeeld"
-          loading="lazy"
-        >
-      </figure>
+    </figure>
 
-    </div>
+</section>
 
-  </article>
 
 </main>
+
 
 
 <!-- CONTACT -->
 
 <section class="contact" id="contact">
 
-  <div>
+    <div>
 
-    <div class="contact-small">
-      Contact
+        <div class="contact-label">
+            Contact
+        </div>
+
+        <h2>
+            Samen iets<br>
+            maken?
+        </h2>
+
+        <a
+            class="email"
+            href="mailto:vandereviererobin@gmail.com"
+        >
+            vandereviererobin@gmail.com ↗
+        </a>
+
     </div>
 
-    <h2>
-      Samen iets<br>
-      maken?
-    </h2>
 
-    <a
-      class="contact-link"
-      href="mailto:vandereviererobin@gmail.com"
-    >
-      vandereviererobin@gmail.com ↗
-    </a>
+    <footer>
 
-  </div>
+        <span>
+            Robin Van De Reviere · Acteur
+        </span>
 
+        <span>
+            Gent · België
+        </span>
 
-  <footer>
+        <span>
+            © 2026
+        </span>
 
-    <span>
-      Robin Van De Reviere · Acteur
-    </span>
-
-    <span>
-      Gent · België
-    </span>
-
-    <span>
-      © 2026
-    </span>
-
-  </footer>
+    </footer>
 
 </section>
 
 
+
 <script>
 
-  /* NAVIGATION */
+/* NAV */
 
-  const nav = document.getElementById("nav");
+const nav =
+    document.getElementById("nav");
 
-  window.addEventListener("scroll", () => {
+window.addEventListener(
+    "scroll",
+    () => {
 
-    if (window.scrollY > 80) {
-      nav.classList.add("scrolled");
-    } else {
-      nav.classList.remove("scrolled");
+        nav.classList.toggle(
+            "scrolled",
+            window.scrollY > 80
+        );
+
     }
+);
 
-  });
 
+/* REVEAL */
 
-  /* SCROLL REVEAL */
-
-  const revealElements =
+const elements =
     document.querySelectorAll(".reveal");
 
-  const observer =
+const observer =
     new IntersectionObserver(
-      entries => {
 
-        entries.forEach(entry => {
+        entries => {
 
-          if (entry.isIntersecting) {
+            entries.forEach(entry => {
 
-            entry.target.classList.add("visible");
+                if (entry.isIntersecting) {
 
-            observer.unobserve(entry.target);
+                    entry.target
+                        .classList
+                        .add("visible");
 
-          }
+                    observer
+                        .unobserve(entry.target);
 
-        });
+                }
 
-      },
-      {
-        threshold: 0.12
-      }
+            });
+
+        },
+
+        {
+            threshold: .10
+        }
+
     );
 
-  revealElements.forEach(element => {
-    observer.observe(element);
-  });
+elements.forEach(
+    element =>
+        observer.observe(element)
+);
 
 </script>
 

@@ -62,6 +62,10 @@
             width: 100%;
         }
 
+        figure {
+            margin: 0;
+        }
+
         ::selection {
             background: var(--buried-yellow);
             color: #111;
@@ -137,7 +141,6 @@
             align-items: flex-end;
 
             overflow: hidden;
-
             padding: 0 5vw 8vh;
         }
 
@@ -317,6 +320,7 @@
 
         .tag {
             padding: 8px 14px;
+
             border-radius: 100px;
             border: 1px solid currentColor;
 
@@ -369,7 +373,7 @@
             margin-bottom: 35px;
         }
 
-        /* Affiche en breed decorbeeld */
+        /* Affiche + breed decorbeeld */
 
         .begraven-lead {
             display: grid;
@@ -405,6 +409,7 @@
         .begraven-wide img {
             width: 100%;
             height: 100%;
+
             object-fit: cover;
             object-position: center;
 
@@ -416,22 +421,23 @@
             transform: scale(1.02);
         }
 
-        /* Grote collage:
-           01 links
-           02/03 rechts boven
-           05 rechts onder
-        */
+        /* =========================
+           BEGRAVEN KIND COLLAGE
+        ========================= */
 
         .begraven-collage {
             display: grid;
 
-            grid-template-columns: .92fr 1.45fr;
-            grid-template-rows: auto auto;
-
+            grid-template-columns: .82fr 1.35fr;
             gap: 14px;
+
             margin-top: 14px;
 
-            align-items: stretch;
+            /*
+            De linker- en rechterkolom eindigen nu
+            altijd op exact dezelfde hoogte.
+            */
+            height: 820px;
         }
 
         .begraven-collage figure {
@@ -440,53 +446,69 @@
             background: #ded8cc;
         }
 
-        /* 01 is het grote verticale beeld */
+        /* Linkerkolom: verticale foto 01 */
 
         .begraven-portrait {
-            grid-column: 1;
-            grid-row: 1 / 3;
-
-            aspect-ratio: 1365 / 2048;
+            height: 100%;
+            min-width: 0;
+            min-height: 0;
         }
 
         .begraven-portrait img {
             width: 100%;
             height: 100%;
+
             object-fit: cover;
 
-            /* Houdt het hoofd en de bovenkant volledig zichtbaar */
+            /*
+            Prioriteit voor het hoofd en de bovenkant.
+            */
             object-position: center top;
         }
 
-        /* 02 en 03 staan als vierkanten naast elkaar */
+        /* Rechterkolom */
+
+        .begraven-right {
+            display: grid;
+
+            grid-template-rows: 1fr 1fr;
+            gap: 14px;
+
+            height: 100%;
+            min-width: 0;
+            min-height: 0;
+        }
+
+        /* Foto 02 en 03 */
 
         .begraven-squares {
-            grid-column: 2;
-            grid-row: 1;
-
             display: grid;
+
             grid-template-columns: 1fr 1fr;
             gap: 14px;
+
+            min-width: 0;
+            min-height: 0;
         }
 
         .begraven-square {
-            aspect-ratio: 1 / 1;
+            min-width: 0;
+            min-height: 0;
         }
 
         .begraven-square img {
             width: 100%;
             height: 100%;
+
             object-fit: cover;
             object-position: center;
         }
 
-        /* 05 is bijna vierkant en staat onder 02/03 */
+        /* Foto 05 */
 
         .begraven-fifth {
-            grid-column: 2;
-            grid-row: 2;
-
-            aspect-ratio: 1000 / 977;
+            min-width: 0;
+            min-height: 0;
         }
 
         .begraven-fifth img {
@@ -496,11 +518,12 @@
             object-fit: cover;
 
             /*
-            De foto is al bijgesneden.
-            Deze positie houdt de personen en de koffer centraal.
+            De afbeelding is al bijgesneden naar 1000 × 977.
             */
-            object-position: center 58%;
+            object-position: center center;
         }
+
+        /* Hoveranimatie */
 
         .begraven-collage img {
             transition:
@@ -511,7 +534,7 @@
             transform: scale(1.025);
         }
 
-        /* Statistiek */
+        /* Aantal voorstellingen */
 
         .begraven-stat {
             margin-top: 85px;
@@ -732,7 +755,8 @@
 
         @media (max-width: 1050px) {
             .begraven-collage {
-                grid-template-columns: .85fr 1.4fr;
+                height: 700px;
+                grid-template-columns: .8fr 1.3fr;
             }
 
             .way-gallery {
@@ -801,7 +825,7 @@
                 font-size: 54px;
             }
 
-            /* Begraven Kind mobiel */
+            /* Begraven Kind bovenste rij */
 
             .begraven-lead {
                 grid-template-columns: 1fr;
@@ -817,33 +841,42 @@
                 width: 100%;
             }
 
+            /* Begraven Kind collage mobiel */
+
             .begraven-collage {
-                display: grid;
-                grid-template-columns: 1fr 1fr;
-                grid-template-rows: auto;
-                gap: 8px;
+                display: block;
+                height: auto;
+                margin-top: 8px;
             }
 
             .begraven-portrait {
-                grid-column: 1 / 3;
-                grid-row: auto;
-
                 width: 76%;
-                margin: 0 auto;
+                height: auto;
+                aspect-ratio: 1365 / 2048;
+
+                margin: 0 auto 8px;
+            }
+
+            .begraven-right {
+                display: block;
+                height: auto;
             }
 
             .begraven-squares {
-                grid-column: 1 / 3;
-                grid-row: auto;
+                display: grid;
+                grid-template-columns: 1fr 1fr;
 
                 gap: 8px;
+                margin-bottom: 8px;
+            }
+
+            .begraven-square {
+                aspect-ratio: 1 / 1;
             }
 
             .begraven-fifth {
-                grid-column: 1 / 3;
-                grid-row: auto;
-
                 width: 100%;
+                aspect-ratio: 1000 / 977;
             }
 
             .begraven-stat {
@@ -854,7 +887,6 @@
 
             .way-gallery {
                 height: auto;
-
                 grid-template-columns: 1fr 1fr;
                 gap: 7px;
             }
@@ -1055,7 +1087,7 @@
                 </div>
             </div>
 
-            <!-- Affiche en breed decorbeeld -->
+            <!-- Affiche en brede foto -->
 
             <div class="begraven-lead reveal">
                 <figure class="poster">
@@ -1073,9 +1105,12 @@
                 </figure>
             </div>
 
-            <!-- 01 links, 02/03 rechtsboven, 05 rechtsonder -->
+            <!-- Gecorrigeerde collage -->
 
             <div class="begraven-collage reveal">
+
+                <!-- Grote verticale foto links -->
+
                 <figure class="begraven-portrait">
                     <img
                         src="images/begraven-kind-01.jpg"
@@ -1084,34 +1119,45 @@
                     >
                 </figure>
 
-                <div class="begraven-squares">
-                    <figure class="begraven-square">
+                <!-- Rechterkolom -->
+
+                <div class="begraven-right">
+
+                    <!-- Foto 02 en 03 -->
+
+                    <div class="begraven-squares">
+                        <figure class="begraven-square">
+                            <img
+                                src="images/begraven-kind-02.jpg"
+                                alt="Scènebeeld uit Begraven Kind"
+                                loading="lazy"
+                            >
+                        </figure>
+
+                        <figure class="begraven-square">
+                            <img
+                                src="images/begraven-kind-03.jpg"
+                                alt="Scènebeeld uit Begraven Kind"
+                                loading="lazy"
+                            >
+                        </figure>
+                    </div>
+
+                    <!-- Foto 05: let op .jpeg -->
+
+                    <figure class="begraven-fifth">
                         <img
-                            src="images/begraven-kind-02.jpg"
-                            alt="Scènebeeld uit Begraven Kind"
+                            src="images/begraven-kind-05.jpeg"
+                            alt="Nachtelijk scènebeeld uit Begraven Kind"
                             loading="lazy"
                         >
                     </figure>
 
-                    <figure class="begraven-square">
-                        <img
-                            src="images/begraven-kind-03.jpg"
-                            alt="Scènebeeld uit Begraven Kind"
-                            loading="lazy"
-                        >
-                    </figure>
                 </div>
 
-                <figure class="begraven-fifth">
-                    <img
-                        src="images/begraven-kind-05.jpeg"
-                        alt="Nachtelijk scènebeeld uit Begraven Kind"
-                        loading="lazy"
-                    >
-                </figure>
             </div>
 
-            <!-- Aantal voorstellingen -->
+            <!-- Voorstellingen -->
 
             <div class="begraven-stat reveal">
                 <div class="big-stat">
